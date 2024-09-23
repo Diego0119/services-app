@@ -11,10 +11,16 @@ export default {
     ],
 
     theme: {
+        colors: {
+            'denexos-blue': ' #004678',
+            'denexos-yellow': '#FEAF00'
+        },
+        fontFamily: {
+            sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+            sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+        },
         extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
+
         },
     },
 
