@@ -16,21 +16,28 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div>
+    <div class="flex flex-col">
         <div class="">
             {{-- publicidad --}}
             <p class="">publicidad</p>
         </div>
-        <div>
+        <div class="flex flex-row justify-between">
             <div>
                 {{-- busqueda por ubicación --}}
+                <p>Busqueda por ubicación</p>
             </div>
             <div>
                 {{-- inicio de sesión, creacion de avisos, usuario nuevo --}}
+                <p>Inicio de sesión, creación de avisos, usuario nuevo</p>
+
             </div>
         </div>
         <div>
             {{-- galeria --}}
+            <p>Galeria</p>
+        </div>
+        <div>
+            <p>Enlace a distinas categorias</p>
         </div>
     </div>
 
