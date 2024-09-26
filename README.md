@@ -1,5 +1,5 @@
 # deNexos.cl 🚀
-
+ 
 ¡Bienvenido al repositorio del proyecto web deNexos.cl!
 Aquí encontrarás toda la información y recursos necesarios para empezar con el despliegue y desarrollo.
 
