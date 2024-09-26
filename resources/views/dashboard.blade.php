@@ -6,7 +6,7 @@
 </head>
 
 <body class="bg-lightGray font-sans">
-
+    <x-navbar />
     <!-- Sidebar -->
     <div class="flex">
         <nav class="fixed inset-y-0 left-0 z-30 w-64 bg-primary text-white transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out"
