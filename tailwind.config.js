@@ -12,11 +12,15 @@ export default {
 
     theme: {
         colors: {
-            'denexos-blue': ' #004678',
-            'denexos-yellow': '#FEAF00'
+            primary: '#004678',  // Azul oscuro
+            secondary: '#FEAF00', // Amarillo cálido
+            lightGray: '#F4F4F4', // Gris claro
+            darkGray: '#333333',  // Gris oscuro
+            success: '#00A676',   // Verde suave
+            error: '#D9534F',     // Rojo suave
+
         },
         fontFamily: {
-            sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             sans: ['Figtree', ...defaultTheme.fontFamily.sans],
         },
         extend: {
