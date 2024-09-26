@@ -20,5 +20,6 @@
 <body class="font-sans antialiased">
 
 </body>
+<x-footer />
 
 </html>
