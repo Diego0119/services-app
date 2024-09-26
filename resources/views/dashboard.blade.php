@@ -2,7 +2,7 @@
     <!-- Contenedor para el layout completo -->
     <div class="flex h-screen bg-gray-100">
         <!-- Sidebar -->
-        <div class="fixed inset-y-0 left-0 z-40 w-64 bg-gray-800 text-white transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out bg-lightGray top-16"
+        <div class="fixed inset-y-0 left-0 z-40 w-64 bg-darkGray text-white transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out top-16"
             id="sidebar">
             <div class="flex items-center justify-center h-16 border-b border-gray-600">
                 <h1 class="text-lg font-semibold">Panel Admin</h1>

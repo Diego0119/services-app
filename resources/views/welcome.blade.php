@@ -10,7 +10,13 @@
     <!-- Styles -->
     @vite('resources/css/app.css')
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
     <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 </head>
@@ -27,20 +33,16 @@
         <div class="flex justify-between my-4">
             <!-- Ubicación / Buscador Rápido -->
             <div class="bg-white p-4 rounded-lg shadow-md w-1/3">
-                <p class="text-primary font-medium">Ubicación / Buscador Rápido</p>
+                <input placeholder="Betonera..." class="rounded" />
+                <i class="fa-solid fa-magnifying-glass text-secondary ml-2 text-xl cursor-pointer"></i>
             </div>
 
             <!-- Inicio de sesión / Nuevo usuario / Creación de avisos -->
             <div class="bg-white p-4 rounded-lg shadow-md w-2/3">
-                @if (Auth::check())
-                    <x-button class="bg-secondary text-white"><a href="{{ route('dashboard') }}">
-                            Dashboard</a></x-button>
-                @else
-                    <x-button class="bg-secondary text-white"><a href="{{ route('login') }}">Iniciar
-                            sesión</a></x-button>
-                @endif
+                <!-- Otros elementos -->
             </div>
         </div>
+
 
         <!-- Galería -->
         <div class="bg-white p-6 rounded-lg shadow-md my-4">

@@ -11,20 +11,18 @@ export default {
     ],
 
     theme: {
-        colors: {
-            primary: '#004678',  // Azul oscuro
-            secondary: '#FEAF00', // Amarillo cálido
-            lightGray: '#F4F4F4', // Gris claro
-            darkGray: '#333333',  // Gris oscuro
-            success: '#00A676',   // Verde suave
-            error: '#D9534F',     // Rojo suave
-
-        },
-        fontFamily: {
-            sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-        },
-        extend: {
-
+        extend: {  // Cambia aquí a 'extend' para añadir colores sin reemplazar
+            colors: {
+                primary: '#004678',  // Azul oscuro
+                secondary: '#FEAF00', // Amarillo cálido
+                lightGray: '#F4F4F4', // Gris claro
+                darkGray: '#333333',  // Gris oscuro
+                success: '#00A676',   // Verde suave
+                error: '#D9534F',     // Rojo suave
+            },
+            fontFamily: {
+                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+            },
         },
     },
 
