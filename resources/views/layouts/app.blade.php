@@ -18,8 +18,12 @@
 <x-navbar />
 
 <body class="font-sans antialiased">
+    <!-- Aquí es donde se inyectará el contenido de las vistas que usan este layout -->
+    <div class="min-h-screen bg-gray-100">
+        {{ $slot }}
+    </div>
 
+    <x-footer />
 </body>
-<x-footer />
 
 </html>

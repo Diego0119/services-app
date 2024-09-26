@@ -15,11 +15,11 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 </head>
 
-<body class="font-sans antialiased h-screen flex flex-col">
+<body class="font-sans antialiased h-screen flex flex-col bg-lightGray">
     <x-navbar />
-    <div class="container mx-auto p-4">
+    <div class="container mx-auto p-4 flex-1">
         <!-- Publicidad -->
-        <div class="bg-secondary text-white text-center py-4 rounded-lg">
+        <div class="bg-secondary text-white text-center py-4 rounded-lg mt-16">
             <p class="text-lg font-bold">Espacio para Publicidad</p>
         </div>
 
@@ -32,7 +32,6 @@
 
             <!-- Inicio de sesión / Nuevo usuario / Creación de avisos -->
             <div class="bg-white p-4 rounded-lg shadow-md w-2/3">
-
                 @if (Auth::check())
                     <x-button class="bg-secondary text-white"><a href="{{ route('dashboard') }}">
                             Dashboard</a></x-button>
@@ -41,7 +40,6 @@
                             sesión</a></x-button>
                 @endif
             </div>
-
         </div>
 
         <!-- Galería -->
@@ -60,9 +58,9 @@
         </div>
     </div>
 
-</body>
+    <!-- Footer -->
+    <x-footer />
 
-<!-- Footer -->
-<x-footer />
+</body>
 
 </html>
