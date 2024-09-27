@@ -35,12 +35,20 @@
         </ul>
     </div>
 
+    <div class="flex flex-row justify-between bg-white py-4">
+        <div class="">
+            <p class="text-black ml-72">Diego - CLIENTE</p>
+        </div>
+        <div>
+            <p class="text-black mr-6">Perfil</p>
+        </div>
+    </div>
+
     <!-- Aquí se inyecta el contenido de las vistas del dashboard -->
     <div class="min-h-screen bg-gray-100">
         {{ $slot }}
     </div>
 
-    <x-footer />
 
     <!-- Script para el menú -->
     <script>
