@@ -120,18 +120,20 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
 
                 <!-- Categoría: Inmuebles -->
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
-                    <i class="fas fa-building fa-3x text-center text-primary"></i>
-                    <p class="text-center font-bold text-lg mt-2">Inmuebles</p>
-                    <ul class="list-disc pl-5 mt-2 text-gray-600">
-                        <li>Departamento</li>
-                        <li>Casa</li>
-                        <li>Oficina</li>
-                        <li>Almacenamiento y bodega</li>
-                        <li>Habitación</li>
-                        <li>Quincho</li>
-                    </ul>
-                </div>
+                <a class="cursor-pointer hover:scale-105 transition-all" href="{{ route('categories.index') }}">
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                        <i class="fas fa-building fa-3x text-center text-primary"></i>
+                        <p class="text-center font-bold text-lg mt-2">Inmuebles</p>
+                        <ul class="list-disc pl-5 mt-2 text-gray-600">
+                            <li>Departamento</li>
+                            <li>Casa</li>
+                            <li>Oficina</li>
+                            <li>Almacenamiento y bodega</li>
+                            <li>Habitación</li>
+                            <li>Quincho</li>
+                        </ul>
+                    </div>
+                </a>
 
                 <!-- Categoría: Vehículos -->
                 <div class="bg-gray-100 p-4 rounded-lg shadow-md">

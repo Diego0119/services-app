@@ -8,7 +8,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        // Ejemplo de un array de categorías
+
         $categories = [
             ['name' => 'Tecnología', 'slug' => 'tecnologia'],
             ['name' => 'Ciencia', 'slug' => 'ciencia'],

@@ -1,4 +1,5 @@
-<x-app-layout>
+<x-dashboard-layout>
+
     <x-slot name="header">
         {{ __('My Account') }}
     </x-slot>
@@ -79,4 +80,4 @@
             </form>
         </div>
     </div>
-</x-app-layout>
+</x-dashboard-layout>
