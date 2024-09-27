@@ -15,13 +15,44 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<x-navbar />
 
 <body class="font-sans antialiased">
+    <div class="fixed inset-y-0 left-0 z-40 w-64 bg-darkGray text-white transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out"
+        id="sidebar">
+        <div class="flex items-center justify-center border-b border-gray-600">
+            <h1 class="text-lg text-secondary font-semibold">logo denexos</h1>
+        </div>
+        <ul class="mt-6">
+            <li><a href="{{ route('dashboard') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Inicio</a></i>
+            </li>
+            <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Mis Avisos</a></li>
+            <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Usuarios</a></li>
+            <li><a href="{{ route('account') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mi Cuenta</a>
+            </li>
+            <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Reportes</a></li>
+            <form action="{{ route('logout') }}" method="POST" style="display: inline;" class="ml-2">
+                @csrf
+                <button type="submit" class="block font-bold px-4 py-2 hover:bg-gray-600">Cerrar
+                    sesión</button>
+            </form>
+        </ul>
+    </div>
     <!-- Aquí es donde se inyectará el contenido de las vistas que usan este layout -->
     <div class="min-h-screen bg-gray-100">
         {{ $slot }}
     </div>
+
+    <x-footer />
 </body>
+
+<!-- Script para el menú -->
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+
+    menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+    });
+</script>
 
 </html>

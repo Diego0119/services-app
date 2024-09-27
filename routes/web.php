@@ -2,11 +2,16 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AccountController;
+
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/account', [AccountController::class, 'index'])->name('account');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

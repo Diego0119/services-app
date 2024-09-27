@@ -46,12 +46,157 @@
 
         <!-- Galería -->
         <div class="bg-white p-6 rounded-lg shadow-md my-4">
-            <p class="text-primary text-center font-bold text-xl">Galería</p>
+            <!-- Galería en Carrusel Horizontal -->
+            <div class="bg-white p-6 rounded-lg shadow-md my-4">
+                <p class="text-primary text-center font-bold text-xl">Galería de Productos y Servicios</p>
+            </div>
+
+            <!-- Carrusel Horizontal -->
+            <div class="overflow-x-auto flex space-x-6 p-4 mt-4">
+                <!-- Producto/Servicio 1 -->
+                <div class="flex-shrink-0 w-64 bg-gray-100 p-4 rounded-lg shadow-md text-center">
+                    <img src="https://via.placeholder.com/300" alt="Producto 1"
+                        class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-lg font-bold mb-2">Servicio de Limpieza</h3>
+                    <p class="text-gray-700 mb-2">Limpieza completa de oficinas y hogares.</p>
+                    <p class="text-green-500 font-bold mb-2">$50.000 CLP</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Contratar</button>
+                </div>
+
+                <!-- Producto/Servicio 2 -->
+                <div class="flex-shrink-0 w-64 bg-gray-100 p-4 rounded-lg shadow-md text-center">
+                    <img src="https://via.placeholder.com/300" alt="Producto 2"
+                        class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-lg font-bold mb-2">Computadora Portátil</h3>
+                    <p class="text-gray-700 mb-2">Laptop de alto rendimiento con 16GB de RAM y 512GB SSD.</p>
+                    <p class="text-green-500 font-bold mb-2">$1.200.000 CLP</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Comprar</button>
+                </div>
+
+                <!-- Producto/Servicio 3 -->
+                <div class="flex-shrink-0 w-64 bg-gray-100 p-4 rounded-lg shadow-md text-center">
+                    <img src="https://via.placeholder.com/300" alt="Producto 3"
+                        class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-lg font-bold mb-2">Servicio de Jardinería</h3>
+                    <p class="text-gray-700 mb-2">Mantenimiento y cuidado de jardines y áreas verdes.</p>
+                    <p class="text-green-500 font-bold mb-2">$40.000 CLP</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Contratar</button>
+                </div>
+
+                <!-- Producto/Servicio 4 -->
+                <div class="flex-shrink-0 w-64 bg-gray-100 p-4 rounded-lg shadow-md text-center">
+                    <img src="https://via.placeholder.com/300" alt="Producto 4"
+                        class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-lg font-bold mb-2">Cámara Fotográfica</h3>
+                    <p class="text-gray-700 mb-2">Cámara DSLR con lente de 18-55mm, ideal para fotografía
+                        profesional.
+                    </p>
+                    <p class="text-green-500 font-bold mb-2">$850.000 CLP</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Comprar</button>
+                </div>
+
+                <!-- Producto/Servicio 5 -->
+                <div class="flex-shrink-0 w-64 bg-gray-100 p-4 rounded-lg shadow-md text-center">
+                    <img src="https://via.placeholder.com/300" alt="Producto 5"
+                        class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-lg font-bold mb-2">Clases de Guitarra</h3>
+                    <p class="text-gray-700 mb-2">Clases particulares para aprender a tocar guitarra desde cero.</p>
+                    <p class="text-green-500 font-bold mb-2">$30.000 CLP</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Contratar</button>
+                </div>
+            </div>
+
         </div>
 
         <!-- Enlaces a categorías -->
         <div class="bg-white p-6 rounded-lg shadow-md my-4">
-            <p class="text-primary text-center font-bold text-xl">Enlaces a las Distintas Categorías</p>
+            <!-- Enlaces a categorías -->
+            <div class="bg-white p-6 rounded-lg shadow-md my-4">
+                <p class="text-primary text-center font-bold text-xl">Enlaces a las Distintas Categorías</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+
+                <!-- Categoría: Inmuebles -->
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                    <i class="fas fa-building fa-3x text-center text-primary"></i>
+                    <p class="text-center font-bold text-lg mt-2">Inmuebles</p>
+                    <ul class="list-disc pl-5 mt-2 text-gray-600">
+                        <li>Departamento</li>
+                        <li>Casa</li>
+                        <li>Oficina</li>
+                        <li>Almacenamiento y bodega</li>
+                        <li>Habitación</li>
+                        <li>Quincho</li>
+                    </ul>
+                </div>
+
+                <!-- Categoría: Vehículos -->
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                    <i class="fas fa-car fa-3x text-center text-primary"></i>
+                    <p class="text-center font-bold text-lg mt-2">Vehículos</p>
+                    <p class="text-center text-sm text-gray-500">Marca, modelo, transmisión, combustible, etc.</p>
+                </div>
+
+                <!-- Categoría: Vestuario -->
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                    <i class="fas fa-tshirt fa-3x text-center text-primary"></i>
+                    <p class="text-center font-bold text-lg mt-2">Vestuario</p>
+                    <p class="text-center text-sm text-gray-500">Tipo, estado, género, talla</p>
+                </div>
+
+                <!-- Categoría: Instrumentos Musicales -->
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                    <i class="fas fa-guitar fa-3x text-center text-primary"></i>
+                    <p class="text-center font-bold text-lg mt-2">Instrumentos Musicales</p>
+                    <p class="text-center text-sm text-gray-500">&lt;Sin características específicas adicionales&gt;
+                    </p>
+                </div>
+
+                <!-- Categoría: Computación y Electrónica -->
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                    <i class="fas fa-laptop fa-3x text-center text-primary"></i>
+                    <p class="text-center font-bold text-lg mt-2">Computación y Electrónica</p>
+                    <p class="text-center text-sm text-gray-500">&lt;Sin características específicas adicionales&gt;
+                    </p>
+                </div>
+
+                <!-- Categoría: Construcción (Herramientas y Equipamiento) -->
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                    <i class="fas fa-tools fa-3x text-center text-primary"></i>
+                    <p class="text-center font-bold text-lg mt-2">Construcción (Herramientas y Equipamiento)</p>
+                    <p class="text-center text-sm text-gray-500">&lt;Sin características específicas adicionales&gt;
+                    </p>
+                </div>
+
+                <!-- Categoría: Artículos del Hogar -->
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                    <i class="fas fa-couch fa-3x text-center text-primary"></i>
+                    <p class="text-center font-bold text-lg mt-2">Artículos del Hogar</p>
+                    <p class="text-center text-sm text-gray-500">&lt;Sin características específicas
+                        adicionales&gt;</p>
+                </div>
+
+                <!-- Categoría: Hobbies y Deportes -->
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                    <i class="fas fa-futbol fa-3x text-center text-primary"></i>
+                    <p class="text-center font-bold text-lg mt-2">Hobbies y Deportes</p>
+                    <p class="text-center text-sm text-gray-500">&lt;Sin características específicas
+                        adicionales&gt;
+                    </p>
+                </div>
+
+                <!-- Categoría: Otros Artículos -->
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                    <i class="fas fa-box fa-3x text-center text-primary"></i>
+                    <p class="text-center font-bold text-lg mt-2">Otros Artículos</p>
+                    <p class="text-center text-sm text-gray-500">&lt;Sin características específicas
+                        adicionales&gt;
+                    </p>
+                </div>
+
+            </div>
+
         </div>
 
         <!-- Publicidad Emergente -->
