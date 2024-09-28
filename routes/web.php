@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\DetailsController;
 
 
 Route::get('/', function () {
@@ -11,6 +12,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/details', [DetailsController::class, 'index'])->name('details');
 Route::get('/account', [AccountController::class, 'index'])->name('account');
 
 Route::get('/dashboard', function () {

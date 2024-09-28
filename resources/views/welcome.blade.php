@@ -44,8 +44,6 @@
                 </x-button>
             </div>
         </div>
-
-
         <!-- Galería -->
         <div class="bg-white p-6 rounded-lg shadow-md my-4">
             <!-- Galería en Carrusel Horizontal -->
@@ -109,7 +107,6 @@
             </div>
 
         </div>
-
         <!-- Enlaces a categorías -->
         <div class="bg-white p-6 rounded-lg shadow-md my-4">
             <!-- Enlaces a categorías -->

@@ -46,7 +46,7 @@
         </div>
 
 
-        <!-- Galería -->
+        {{-- <!-- Galería -->
         <div class="bg-white p-6 rounded-lg shadow-md my-4">
             <!-- Galería en Carrusel Horizontal -->
             <div class="bg-white p-6 rounded-lg shadow-md my-4">
@@ -108,13 +108,16 @@
                 </div>
             </div>
 
-        </div>
+        </div> --}}
 
-        <!-- Enlaces a categorías -->
+        {{-- <!-- Enlace a galeria -->
         <div class="bg-white p-6 rounded-lg shadow-md my-4">
             {{ $slot }}
-
         </div>
+        --}}
+
+        {{ $slot }}
+
 
         <!-- Publicidad Emergente -->
         <div class="fixed right-4 bottom-4 bg-secondary text-white p-4 rounded-lg shadow-lg">
