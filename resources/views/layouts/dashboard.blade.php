@@ -24,6 +24,7 @@
         </div>
         <ul class="mt-6">
             <li><a href="{{ route('dashboard') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Inicio</a></li>
+            <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Subir aviso</a></li>
             <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Mis Avisos</a></li>
             <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Usuarios</a></li>
             <li><a href="{{ route('account') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mi Cuenta</a></li>
@@ -37,7 +38,10 @@
 
     <div class="flex flex-row justify-between bg-white py-4">
         <div class="">
-            <p class="text-black ml-72">Diego - CLIENTE</p>
+            @php
+                $user_name = Auth::user()->name;
+            @endphp
+            <p class="text-black ml-72">{{ $user_name }} - CLIENTE</p>
         </div>
         <div>
             <p class="text-black mr-6">Perfil</p>

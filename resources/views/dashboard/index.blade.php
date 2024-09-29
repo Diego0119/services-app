@@ -5,7 +5,6 @@
 
         <!-- Contenido principal -->
         <div class="flex-1 flex flex-col md:ml-64">
-
             <!-- Botón para abrir el menú en pantallas pequeñas -->
             <header class="md:hidden bg-gray-800 text-white flex justify-between items-center p-4">
                 <button id="menu-toggle" class="p-2 text-white bg-gray-700 rounded">Menu</button>

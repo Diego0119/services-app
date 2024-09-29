@@ -23,7 +23,8 @@
 
 <body class="font-sans antialiased h-screen flex flex-col bg-lightGray">
     <x-navbar />
-    <div class="container mx-auto p-4 flex-1">
+    {{-- container mx-auto p-4 flex-1 --}}
+    <div class="mx-4">
         <!-- Publicidad -->
         <div class="bg-secondary text-white text-center py-4 rounded-lg mt-16">
             <p class="text-lg font-bold">Espacio para Publicidad</p>
@@ -206,9 +207,8 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <x-footer />
-
 </body>
+<!-- Footer -->
+<x-footer />
 
 </html>
