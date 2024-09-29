@@ -21,7 +21,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 </head>
 
-<body class="font-sans antialiased h-screen flex flex-col bg-lightGray">
+<body class="font-sans antialiased h-screen flex flex-col bg-lightGray space-y-6">
     <x-navbar />
     {{-- container mx-auto p-4 flex-1 --}}
     <div class="mx-4">

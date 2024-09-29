@@ -22,9 +22,11 @@
         <div class="flex items-center justify-center border-b border-gray-600">
             <h1 class="text-lg text-secondary font-semibold">logo denexos</h1>
         </div>
+        <a class="flex justify-center mt-4" href="{{ route('upload-notice') }}">
+            <x-button class="bg-primary">Subir aviso</x-button>
+        </a>
         <ul class="mt-6">
             <li><a href="{{ route('dashboard') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Inicio</a></li>
-            <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Subir aviso</a></li>
             <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Mis Avisos</a></li>
             <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Usuarios</a></li>
             <li><a href="{{ route('account') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mi Cuenta</a></li>
@@ -36,7 +38,7 @@
         </ul>
     </div>
 
-    <div class="flex flex-row justify-between bg-white py-4">
+    <div class="flex flex-row justify-between items-center bg-white py-4">
         <div class="">
             @php
                 $user_name = Auth::user()->name;
@@ -44,7 +46,9 @@
             <p class="text-black ml-72">{{ $user_name }} - CLIENTE</p>
         </div>
         <div>
-            <p class="text-black mr-6">Perfil</p>
+            <a href="{{ route('account') }}">
+                <p class="text-black mr-6 border border-black rounded-full p-2">Perfil</p>
+            </a>
         </div>
     </div>
 
