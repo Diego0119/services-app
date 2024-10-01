@@ -2,6 +2,7 @@
     <div class="container mx-auto flex justify-between items-center">
         <h1 class="text-2xl font-bold text-secondary"><a href="{{ route('home') }}">deNexos</a></h1>
         <div class="space-x-4">
+
             @if (Auth::check())
                 <a href="{{ route('dashboard') }}"
                     class="bg-secondary text-black px-4 py-2 hover:bg-lightGray rounded hover:cursor-pointer">Dashboard</a>
