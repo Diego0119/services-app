@@ -45,4 +45,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function hasRole(string $roleSlug)
+    {
+        return $this->role->slug === $roleSlug;
+    }
+
+    public function isClient()
+    {
+        if ($this->role_id == 2) {
+            return true;
+        }
+    }
 }

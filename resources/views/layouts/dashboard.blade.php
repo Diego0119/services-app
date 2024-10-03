@@ -45,10 +45,13 @@
         <div class="">
             @php
                 $user_name = Auth::user()->name;
-                $user_role = Auth::user()->role();
 
             @endphp
-            <p class="text-black ml-72">{{ $user_name + $user_role }} - CLIENTE</p>
+            @if (Auth::user()->isClient())
+                {
+                <p class="text-black ml-72">{{ $user_name }} - Cliente</p>
+                }
+            @endif
         </div>
         <div>
             <a href="{{ route('account') }}">
