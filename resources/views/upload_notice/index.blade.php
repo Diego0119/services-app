@@ -31,17 +31,53 @@
                         class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Ingresa el precio"
                         required>
                 </div>
-
                 <!-- Categoría -->
                 <div class="mb-4">
                     <label for="categoria" class="block text-sm font-medium text-gray-700">Categoría</label>
                     <select name="categoria" id="categoria"
                         class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
                         <option value="">Selecciona una categoría</option>
-                        <option value="servicio">Servicio</option>
-                        <option value="producto">Producto</option>
+
+                        @foreach ($categories as $category)
+                            {
+                            <option value={{ $category->id }}>{{ $category->name }}</option>
+                            }
+                        @endforeach
+
                     </select>
                 </div>
+
+                {{-- <div class="mb-4">
+                    <label for="attribute" class="block text-sm font-medium text-gray-700">Categoría adicional</label>
+                    <select name="attribute" id="attribute"
+                        class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
+                        <option value="">Selecciona una categoria adicional</option>
+
+                        @foreach ($attributes as $attribute)
+                            {
+                            <option value={{ $attribute->id }}>{{ $attribute->name }}</option>
+                            }
+                        @endforeach
+
+                    </select>
+                </div> --}}
+
+                <!-- Región -->
+                <div class="mb-4">
+                    <label for="region" class="block text-sm font-medium text-gray-700">Región</label>
+                    <select name="region" id="region"
+                        class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
+                        <option value="">Selecciona una región</option>
+
+                        @foreach ($regions as $region)
+                            {
+                            <option value={{ $region->id }}>{{ $region->name }}</option>
+                            }
+                        @endforeach
+
+                    </select>
+                </div>
+
 
                 <!-- Imagen del aviso -->
                 <div class="mb-4">
@@ -60,4 +96,35 @@
             </form>
         </div>
     </div>
+    <script>
+        // Pasar los atributos desde Blade a JavaScript como un JSON
+        let attributes = @json($attributes);
+
+        // Obtener elementos de DOM
+        const categoriaSelect = document.getElementById('categoria');
+        const attributeSelect = document.getElementById('attribute');
+
+        // Función para actualizar el select de atributos
+        function updateAttributes(categoryId) {
+            // Limpiar las opciones actuales
+            attributeSelect.innerHTML = '<option value="">Selecciona una categoría adicional</option>';
+
+            // Filtrar atributos que coincidan con la categoría seleccionada
+            const filteredAttributes = attributes.filter(attribute => attribute.category_id == categoryId);
+
+            // Añadir las nuevas opciones filtradas
+            filteredAttributes.forEach(attribute => {
+                const option = document.createElement('option');
+                option.value = attribute.id;
+                option.textContent = attribute.name;
+                attributeSelect.appendChild(option);
+            });
+        }
+
+        // Escuchar cambios en el select de categorías
+        categoriaSelect.addEventListener('change', function() {
+            const selectedCategoryId = this.value;
+            updateAttributes(selectedCategoryId);
+        });
+    </script>
 </x-dashboard-layout>

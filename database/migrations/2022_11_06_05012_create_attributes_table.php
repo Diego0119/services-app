@@ -12,17 +12,10 @@ return new class extends Migration {
     {
         Schema::create('attributes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('category_id');
             $table->string('name');
             $table->string('type');
             $table->timestamps();
-
-            $table->foreign('category_id')
-                ->references('id')
-                ->on('categories')
-                ->onDelete('cascade');
         });
-
     }
 
     /**

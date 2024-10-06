@@ -7,6 +7,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\DetailsController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\MyNoticesController;
+use App\Http\Controllers\UploadNoticeController;
 
 
 Route::get('/', function () {
@@ -16,7 +17,7 @@ Route::get('/', function () {
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/details', [DetailsController::class, 'index'])->name('details');
 Route::get('/account', [AccountController::class, 'index'])->name('account');
-Route::get('/upload-notice', [NoticeController::class, 'index'])->name('upload-notice');
+Route::get('/upload-notice', [UploadNoticeController::class, 'index'])->name('upload-notice');
 Route::get('/my-notices', [MyNoticesController::class, 'index'])->name('my-notices');
 
 Route::get('/dashboard', function () {

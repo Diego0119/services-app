@@ -14,7 +14,12 @@ class CategoriesSeeder extends Seeder
     public function run(): void
     {
         $data = [
-            ['name' => 'Inmuebles'],
+            ['name' => 'Departamento'],
+            ['name' => 'Casa'],
+            ['name' => 'Oficina'],
+            ['name' => 'Almacenamiento y bodega'],
+            ['name' => 'Habitación'],
+            ['name' => 'Quincho'],
             ['name' => 'Vehículos'],
             ['name' => 'Electrónica'],
             ['name' => 'Ropa'],
