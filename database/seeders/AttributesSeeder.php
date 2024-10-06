@@ -50,6 +50,12 @@ class AttributesSeeder extends Seeder
             ['name' => 'Género', 'type' => 'select'],
             ['name' => 'Talla', 'type' => 'text'],
             ['name' => 'Estado', 'type' => 'select'],
+            ['name' => 'Sala de reuniones', 'type' => 'checkbox'],
+            ['name' => 'Espacio para oficina', 'type' => 'checkbox'],
+            ['name' => 'Superficie de la habitación', 'type' => 'checkbox'],
+            ['name' => 'Baño individual', 'type' => 'checkbox'],
+            ['name' => 'Cocina compartida', 'type' => 'checkbox'],
+            ['name' => 'Numero de personas', 'type' => 'numeric']
 
         ];
 

@@ -17,9 +17,9 @@ class Attribute extends Model
         'type',
     ];
 
-    public function category()
+    public function categorie()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsToMany(Category::class, 'category_attributes');
     }
 
     public function attributeValues()

@@ -47,20 +47,10 @@
                     </select>
                 </div>
 
-                {{-- <div class="mb-4">
-                    <label for="attribute" class="block text-sm font-medium text-gray-700">Categoría adicional</label>
-                    <select name="attribute" id="attribute"
-                        class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
-                        <option value="">Selecciona una categoria adicional</option>
 
-                        @foreach ($attributes as $attribute)
-                            {
-                            <option value={{ $attribute->id }}>{{ $attribute->name }}</option>
-                            }
-                        @endforeach
-
-                    </select>
-                </div> --}}
+                <div id="attribute-container">
+                    <!-- Aquí se añadirán los inputs dinámicamente -->
+                </div>
 
                 <!-- Región -->
                 <div class="mb-4">
@@ -98,26 +88,75 @@
     </div>
     <script>
         // Pasar los atributos desde Blade a JavaScript como un JSON
+        let categories = @json($categories);
+        let category_attribute = @json($category_attribute);
         let attributes = @json($attributes);
+        console.log(attributes);
 
         // Obtener elementos de DOM
         const categoriaSelect = document.getElementById('categoria');
-        const attributeSelect = document.getElementById('attribute');
+        const attributeContainer = document.getElementById('attribute-container'); // Contenedor para los atributos
 
-        // Función para actualizar el select de atributos
+        // Función para actualizar los inputs de atributos
         function updateAttributes(categoryId) {
-            // Limpiar las opciones actuales
-            attributeSelect.innerHTML = '<option value="">Selecciona una categoría adicional</option>';
+            // Limpiar los inputs actuales
+            attributeContainer.innerHTML = '';
 
-            // Filtrar atributos que coincidan con la categoría seleccionada
-            const filteredAttributes = attributes.filter(attribute => attribute.category_id == categoryId);
+            // Filtrar los atributos que coincidan con la categoría seleccionada
+            const filteredAttributes = category_attribute
+                .filter(ca => ca.category_id == categoryId)
+                .map(ca => ca.attribute_id);
 
-            // Añadir las nuevas opciones filtradas
-            filteredAttributes.forEach(attribute => {
-                const option = document.createElement('option');
-                option.value = attribute.id;
-                option.textContent = attribute.name;
-                attributeSelect.appendChild(option);
+            // Filtrar los atributos en función de los IDs obtenidos
+            const options = attributes.filter(attr => filteredAttributes.includes(attr.id));
+
+            // Añadir los nuevos inputs filtrados
+            options.forEach(attr => {
+                let input;
+                switch (attr.type) { // Usar 'type' en lugar de 'input_type'
+                    case 'checkbox':
+                        input = document.createElement('input');
+                        input.type = 'checkbox';
+                        input.id = `attribute_${attr.id}`;
+                        input.name = `attribute[]`; // Para enviar como array
+                        input.value = attr.id;
+                        break;
+
+                    case 'radio':
+                        input = document.createElement('input');
+                        input.type = 'radio';
+                        input.id = `attribute_${attr.id}`;
+                        input.name = `attribute`; // Para seleccionar un solo atributo
+                        input.value = attr.id;
+                        break;
+
+                    case 'select':
+                        input = document.createElement('select');
+                        input.id = `attribute_${attr.id}`;
+                        input.name = `attribute[]`; // Para enviar como array
+                        // Suponiendo que tienes opciones para el select
+                        attr.options.forEach(option => {
+                            const opt = document.createElement('option');
+                            opt.value = option.value; // Asegúrate de que tengas el valor correcto
+                            opt.textContent = option.label; // Asegúrate de que tengas el texto correcto
+                            input.appendChild(opt);
+                        });
+                        break;
+
+                    default: // Si no coincide con los anteriores, crear un campo de texto
+                        input = document.createElement('input');
+                        input.type = 'text';
+                        input.id = `attribute_${attr.id}`;
+                        input.name = `attribute[]`;
+                        break;
+                }
+
+                const label = document.createElement('label');
+                label.textContent = attr.name; // Nombre del atributo
+                label.htmlFor = `attribute_${attr.id}`; // Asocia la etiqueta con el input
+
+                attributeContainer.appendChild(label);
+                attributeContainer.appendChild(input);
             });
         }
 
@@ -127,4 +166,5 @@
             updateAttributes(selectedCategoryId);
         });
     </script>
+
 </x-dashboard-layout>
