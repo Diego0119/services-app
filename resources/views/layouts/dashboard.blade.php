@@ -21,18 +21,20 @@
         id="sidebar">
         <div class="flex items-center justify-center border-b border-gray-600">
             <a href="{{ route('home') }}">
-                <h1 class="text-lg text-secondary font-semibold">logo denexos</h1>
+                <img src="{{ asset('images/logo_dashboard.png') }}" class="w-52 p-2" alt="Logo Dashboard">
             </a>
         </div>
-        <a class="flex justify-center mt-4" href="{{ route('upload-notice') }}">
+        <a class="flex justify-center mt-4" href="{{ route('upload-notice.index') }}">
             <x-button class="bg-primary">Subir aviso</x-button>
         </a>
         <ul class="mt-6">
             <li><a href="{{ route('dashboard') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Inicio</a></li>
-            <li><a href="{{ route('my-notices') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mis Avisos</a>
+            <li><a href="{{ route('my-notices.index') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mis
+                    Avisos</a>
             </li>
             <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Usuarios</a></li>
-            <li><a href="{{ route('account') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mi Cuenta</a></li>
+            <li><a href="{{ route('account.index') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mi Cuenta</a>
+            </li>
             <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Reportes</a></li>
             <form action="{{ route('logout') }}" method="POST" style="display: inline;" class="ml-2">
                 @csrf
@@ -54,7 +56,7 @@
             @endif
         </div>
         <div>
-            <a href="{{ route('account') }}">
+            <a href="{{ route('account.index') }}">
                 <p class="text-black mr-6 border border-black rounded-full p-2">Perfil</p>
             </a>
         </div>

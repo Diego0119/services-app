@@ -6,7 +6,8 @@
             <h2 class="text-2xl font-bold text-black mb-6">Subir un nuevo aviso</h2>
 
             <!-- Formulario -->
-            <form method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-lg shadow-md">
+            <form action={{ route('upload-notice.store') }} method="POST" enctype="multipart/form-data"
+                class="bg-white p-6 rounded-lg shadow-md">
                 @csrf
                 <!-- Título del aviso -->
                 <div class="mb-4">
@@ -47,10 +48,10 @@
                     </select>
                 </div>
 
-
-                <div id="attribute-container">
+                <div id="attribute-container" class="flex flex-wrap">
                     <!-- Aquí se añadirán los inputs dinámicamente -->
                 </div>
+
 
                 <!-- Región -->
                 <div class="mb-4">
@@ -58,16 +59,23 @@
                     <select name="region" id="region"
                         class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
                         <option value="">Selecciona una región</option>
-
                         @foreach ($regions as $region)
-                            {
-                            <option value={{ $region->id }}>{{ $region->name }}</option>
-                            }
+                            <option value="{{ $region->id }}">{{ $region->name }}</option>
                         @endforeach
-
                     </select>
                 </div>
+                <!-- Comuna-->
+                <div class="mb-4">
+                    <label for="commune" class="block text-sm font-medium text-gray-700">Comuna</label>
+                    <select id="commune" name="commune"
+                        class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                        <option value="">Selecciona una comuna</option>
+                    </select>
 
+                </div>
+                <div id="attribute-container" class="mb-4">
+                    <!-- Aquí se agregarán los atributos dinámicamente -->
+                </div>
 
                 <!-- Imagen del aviso -->
                 <div class="mb-4">
@@ -91,11 +99,12 @@
         let categories = @json($categories);
         let category_attribute = @json($category_attribute);
         let attributes = @json($attributes);
-        console.log(attributes);
+        let communes = @json($communes);
 
         // Obtener elementos de DOM
         const categoriaSelect = document.getElementById('categoria');
         const attributeContainer = document.getElementById('attribute-container'); // Contenedor para los atributos
+        const communeSelect = document.getElementById('commune');
 
         // Función para actualizar los inputs de atributos
         function updateAttributes(categoryId) {
@@ -110,60 +119,102 @@
             // Filtrar los atributos en función de los IDs obtenidos
             const options = attributes.filter(attr => filteredAttributes.includes(attr.id));
 
-            // Añadir los nuevos inputs filtrados
             options.forEach(attr => {
+                // Crear un contenedor para cada atributo
+                const attributeDiv = document.createElement('div');
+                attributeDiv.classList.add('flex', 'items-center', 'space-x-2', 'w-full', 'md:w-1/2', 'lg:w-1/3');
+
                 let input;
-                switch (attr.type) { // Usar 'type' en lugar de 'input_type'
+                switch (attr.type) {
                     case 'checkbox':
                         input = document.createElement('input');
                         input.type = 'checkbox';
                         input.id = `attribute_${attr.id}`;
-                        input.name = `attribute[]`; // Para enviar como array
+                        input.name = `attribute[]`;
                         input.value = attr.id;
+                        input.classList.add('form-checkbox', 'h-4', 'w-4', 'text-blue-600', 'border-gray-300',
+                            'rounded'); // Clases de Tailwind para checkbox
                         break;
 
                     case 'radio':
                         input = document.createElement('input');
                         input.type = 'radio';
                         input.id = `attribute_${attr.id}`;
-                        input.name = `attribute`; // Para seleccionar un solo atributo
+                        input.name = `attribute`;
                         input.value = attr.id;
+                        input.classList.add('form-radio', 'h-4', 'w-4', 'text-blue-600',
+                            'border-gray-300'); // Clases de Tailwind para radio
                         break;
 
                     case 'select':
                         input = document.createElement('select');
                         input.id = `attribute_${attr.id}`;
-                        input.name = `attribute[]`; // Para enviar como array
-                        // Suponiendo que tienes opciones para el select
+                        input.name = `attribute[]`;
+                        input.classList.add('form-select', 'mt-1', 'block', 'w-full', 'rounded-md',
+                            'border-gray-300', 'shadow-sm');
                         attr.options.forEach(option => {
                             const opt = document.createElement('option');
-                            opt.value = option.value; // Asegúrate de que tengas el valor correcto
-                            opt.textContent = option.label; // Asegúrate de que tengas el texto correcto
+                            opt.value = option.value;
+                            opt.textContent = option.label;
                             input.appendChild(opt);
                         });
                         break;
 
-                    default: // Si no coincide con los anteriores, crear un campo de texto
+                    default: // Campo de texto por defecto
                         input = document.createElement('input');
                         input.type = 'text';
                         input.id = `attribute_${attr.id}`;
                         input.name = `attribute[]`;
+                        input.classList.add('mt-1', 'block', 'border', 'border-gray-300', 'rounded-md',
+                            'shadow-sm'); // Clases de Tailwind para texto
                         break;
                 }
 
                 const label = document.createElement('label');
-                label.textContent = attr.name; // Nombre del atributo
-                label.htmlFor = `attribute_${attr.id}`; // Asocia la etiqueta con el input
+                label.textContent = attr.name;
+                label.htmlFor = `attribute_${attr.id}`;
+                label.classList.add('block', 'text-sm', 'font-medium',
+                    'text-gray-700'); // Clases de Tailwind para etiqueta
 
-                attributeContainer.appendChild(label);
-                attributeContainer.appendChild(input);
+                // Añadir la etiqueta y el input al contenedor
+                attributeDiv.appendChild(input);
+                attributeDiv.appendChild(label);
+
+                // Añadir el contenedor al attribute-container
+                attributeContainer.appendChild(attributeDiv);
+            });
+
+        }
+
+        // Función para actualizar las comunas basadas en la región seleccionada
+        function updateCommunes(regionId) {
+            // Limpiar las opciones actuales en el select de comunas
+            communeSelect.innerHTML = '<option value="">Selecciona una comuna</option>';
+
+            // Filtrar comunas que coincidan con el regionId
+            const filteredCommunes = communes.filter(commune => commune.region_id == regionId);
+
+            // Añadir las nuevas opciones filtradas al select
+            filteredCommunes.forEach(commune => {
+                const option = document.createElement('option');
+                option.value = commune.id; // Asignar el id de la comuna
+                option.textContent = commune.name; // Asignar el nombre de la comuna
+                communeSelect.appendChild(option); // Añadir la opción al select
             });
         }
+
 
         // Escuchar cambios en el select de categorías
         categoriaSelect.addEventListener('change', function() {
             const selectedCategoryId = this.value;
             updateAttributes(selectedCategoryId);
+        });
+
+        // Escuchar cambios en el select de regiones
+        const regionSelect = document.getElementById('region');
+        regionSelect.addEventListener('change', function() {
+            const selectedRegionId = this.value;
+            updateCommunes(selectedRegionId);
         });
     </script>
 

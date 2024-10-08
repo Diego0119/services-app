@@ -116,24 +116,21 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+                @foreach ($categories as $category)
+                    <a class="cursor-pointer hover:scale-105 transition-all"
+                        href="{{ route('category.show', $category->id) }}">
+                        <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                            <!-- Icono dinámico o uno por defecto -->
+                            <i class="fas fa-building fa-3x text-center text-primary"></i>
+                            <p class="text-center font-bold text-lg mt-2">{{ $category->name }}</p>
+                        </div>
+                    </a>
+                @endforeach
 
-                <!-- Categoría: Inmuebles -->
-                <a class="cursor-pointer hover:scale-105 transition-all" href="{{ route('categories.index') }}">
-                    <div class="bg-gray-100 p-4 rounded-lg shadow-md">
-                        <i class="fas fa-building fa-3x text-center text-primary"></i>
-                        <p class="text-center font-bold text-lg mt-2">Inmuebles</p>
-                        <ul class="list-disc pl-5 mt-2 text-gray-600">
-                            <li>Departamento</li>
-                            <li>Casa</li>
-                            <li>Oficina</li>
-                            <li>Almacenamiento y bodega</li>
-                            <li>Habitación</li>
-                            <li>Quincho</li>
-                        </ul>
-                    </div>
-                </a>
 
-                <!-- Categoría: Vehículos -->
+
+
+                {{-- <!-- Categoría: Vehículos -->
                 <div class="bg-gray-100 p-4 rounded-lg shadow-md">
                     <i class="fas fa-car fa-3x text-center text-primary"></i>
                     <p class="text-center font-bold text-lg mt-2">Vehículos</p>
@@ -167,7 +164,8 @@
                 <div class="bg-gray-100 p-4 rounded-lg shadow-md">
                     <i class="fas fa-tools fa-3x text-center text-primary"></i>
                     <p class="text-center font-bold text-lg mt-2">Construcción (Herramientas y Equipamiento)</p>
-                    <p class="text-center text-sm text-gray-500">&lt;Sin características específicas adicionales&gt;
+                    <p class="text-center text-sm text-gray-500">&lt;Sin características específicas
+                        adicionales&gt;
                     </p>
                 </div>
 
@@ -195,7 +193,7 @@
                     <p class="text-center text-sm text-gray-500">&lt;Sin características específicas
                         adicionales&gt;
                     </p>
-                </div>
+                </div> --}}
 
             </div>
 

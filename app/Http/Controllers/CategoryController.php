@@ -9,8 +9,16 @@ class CategoryController extends Controller
 {
     public function index()
     {
+        $categories = Category::select('id', 'name')->get();
 
+        return view('categories.index', data: ['categories' => $categories]);
+    }
 
-        return view('categories.index', compact('categories'));
+    public function showCategory($categoryId)
+    {
+        $category = Category::where('id', $categoryId)->get();
+
+        return view('categories.index', data: ['category' => $category]);
+
     }
 }
