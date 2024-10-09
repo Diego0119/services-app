@@ -1,6 +1,10 @@
 <x-app-layout>
     <x-gallery-layout />
-    <p class="text-primary text-center font-bold text-xl">Inmuebles</p>
+    @if ($category)
+        <p class="text-primary text-center font-bold text-xl">{{ $category->name }}</p>
+    @else
+        <p class="text-primary text-center font-bold text-xl">Esa categoria no existe</p>
+    @endif
     <!-- Carrusel Horizontal -->
     <div class="grid grid-cols-4 space-x-2 p-4 mt-4 bg-white rounded-md shadow-md">
         <!-- Producto/Servicio 1 -->

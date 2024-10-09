@@ -11,36 +11,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="border-b hover:bg-gray-50">
-                    <td class="px-4 py-2">Aviso 1</td>
-                    <td class="px-4 py-2">$100</td>
-                    <td class="px-4 py-2">Juan Pérez - 123456789</td>
-                    <td class="px-4 py-2">
-                        <a href="#" class="text-blue-600 hover:underline">Ver</a>
-                        <a href="#" class="text-yellow-600 hover:underline ml-4">Editar</a>
-                        <a href="#" class="text-red-600 hover:underline ml-4">Eliminar</a>
-                    </td>
-                </tr>
-                <tr class="border-b hover:bg-gray-50">
-                    <td class="px-4 py-2">Aviso 2</td>
-                    <td class="px-4 py-2">$150</td>
-                    <td class="px-4 py-2">María Gómez - 987654321</td>
-                    <td class="px-4 py-2">
-                        <a href="#" class="text-blue-600 hover:underline">Ver</a>
-                        <a href="#" class="text-yellow-600 hover:underline ml-4">Editar</a>
-                        <a href="#" class="text-red-600 hover:underline ml-4">Eliminar</a>
-                    </td>
-                </tr>
-                <tr class="border-b hover:bg-gray-50">
-                    <td class="px-4 py-2">Aviso 3</td>
-                    <td class="px-4 py-2">$200</td>
-                    <td class="px-4 py-2">Pedro Martínez - 456123789</td>
-                    <td class="px-4 py-2">
-                        <a href="#" class="text-blue-600 hover:underline">Ver</a>
-                        <a href="#" class="text-yellow-600 hover:underline ml-4">Editar</a>
-                        <a href="#" class="text-red-600 hover:underline ml-4">Eliminar</a>
-                    </td>
-                </tr>
+                @foreach ($notices as $notice)
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="px-4 py-2">{{ $notice->title }}</td>
+                        <td class="px-4 py-2">{{ $notice->price }}</td>
+                        <td class="px-4 py-2">{{ $user->name }} - {{ $user->email }}</td>
+                        <td class="px-4 py-2">
+                            <a href="#" class="text-blue-600 hover:underline">Ver</a>
+                            <a href="#" class="text-yellow-600 hover:underline ml-4">Editar</a>
+                            <a href="#" class="text-red-600 hover:underline ml-4">Eliminar</a>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

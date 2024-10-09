@@ -16,9 +16,9 @@ class CategoryController extends Controller
 
     public function showCategory($categoryId)
     {
-        $category = Category::where('id', $categoryId)->get();
+        $category = Category::select('id', 'name')->where('id', $categoryId)->first();
 
-        return view('categories.index', data: ['category' => $category]);
+        return view('categories.index', ['category' => $category]);
 
     }
 }

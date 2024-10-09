@@ -140,7 +140,7 @@
                         input = document.createElement('input');
                         input.type = 'radio';
                         input.id = `attribute_${attr.id}`;
-                        input.name = `attribute`;
+                        input.name = `attribute[]`;
                         input.value = attr.id;
                         input.classList.add('form-radio', 'h-4', 'w-4', 'text-blue-600',
                             'border-gray-300'); // Clases de Tailwind para radio

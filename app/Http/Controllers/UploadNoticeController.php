@@ -9,10 +9,18 @@ use App\Models\Attribute;
 use DB;
 use App\Models\Commune;
 use App\Models\Notice;
+use App\Models\AttributeValue;
+
 
 
 class UploadNoticeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
 
@@ -24,7 +32,7 @@ class UploadNoticeController extends Controller
 
         return view(
             'upload_notice.index',
-            [
+            data: [
                 'categories' => $categories,
                 'regions' => $regions,
                 'attributes' => $attributes,
@@ -36,20 +44,33 @@ class UploadNoticeController extends Controller
 
     public function store(Request $request)
     {
-        // aca debo hacer que se relacione el aviso con los atributos adicionales
-        dd($request->attributes);
-        $titulo = $request->input('titulo');
-        $descripcion = $request->input('descripcion');
-        $precio = $request->input('precio');
-        $categoria = $request->input('categoria');
-        $region = $request->input('region');
-        $commune = $request->input('commune');
+        $user = auth()->user();
+        $notice = new Notice;
+        $notice->user_id = $user->id;
+        $notice->title = $request->input('titulo');
+        $notice->description = $request->input('descripcion');
+        $notice->price = $request->input('precio');
+        $notice->category_id = $request->input('categoria');
+        // $notice->region_id = $request->input('region');
+        $notice->commune_id = $request->input('commune');
+        $notice->status = 'EN_REVISION';
         if ($request->hasFile('imagen')) {
             $file = $request->file('imagen');
             $filename = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path('uploads'), $filename);
         }
 
+        $notice->save();
 
+        if (!empty($attributes)) {
+            foreach ($attributes as $attributeId => $value) {
+                $attributeValue = new AttributeValue();
+                $attributeValue->attribute_id = $attributeId;
+                $attributeValue->value = $value;
+                $attributeValue->save();
+            }
+        }
+
+        redirect('/my-notices');
     }
 }
