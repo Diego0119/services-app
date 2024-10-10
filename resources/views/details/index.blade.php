@@ -3,8 +3,8 @@
     <div class="bg-white p-6 rounded-lg shadow-md my-4 flex flex-col space-y-4">
         <!-- Título y precio -->
         <div class="flex justify-between items-center border-b pb-4">
-            <h1 class="text-2xl font-bold text-gray-800">Título del Aviso</h1>
-            <span class="text-xl font-semibold text-green-600">$99.99</span>
+            <h1 class="text-2xl font-bold text-gray-800">{{ $notice->title }}</h1>
+            <span class="text-xl font-semibold text-green-600">{{ $notice->price }}</span>
         </div>
 
         <!-- Valorización (solo si es un servicio) -->
@@ -15,8 +15,8 @@
 
         <!-- Contacto, nombre y ubicación del vendedor -->
         <div class="flex flex-col space-y-2">
-            <p class="text-gray-800">Contacto: Juan Pérez</p>
-            <p class="text-gray-600">Ubicación: Santiago, Chile</p>
+            <p class="text-gray-800">Contacto: {{ $user->name }}</p>
+            <p class="text-gray-600">Ubicación: {{ $commune->name }}</p>
         </div>
 
         <!-- Imagen y descripción -->
@@ -30,9 +30,7 @@
             <!-- Descripción del artículo -->
             <div class="w-2/3">
                 <p class="text-gray-700">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum
-                    vestibulum. Cras venenatis euismod malesuada. Fusce sed commodo justo. Vivamus in enim sed eros
-                    ultrices dictum.
+                    {{ $notice->description }}
                 </p>
             </div>
         </div>

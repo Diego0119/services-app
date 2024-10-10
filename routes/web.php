@@ -22,6 +22,7 @@ Route::post('/upload-notice', [UploadNoticeController::class, 'store'])->name('u
 Route::get('/my-notices', [MyNoticesController::class, 'index'])->name('my-notices.index');
 Route::get('get-communes/{region_id}', [CommunesController::class, 'getCommunes']);
 Route::get('/category/{id}', [CategoryController::class, 'showCategory'])->name('category.show');
+Route::get('/notice/{id}', [NoticeController::class, 'showNotice'])->name('notice.show');
 
 
 Route::get('/dashboard', function () {
