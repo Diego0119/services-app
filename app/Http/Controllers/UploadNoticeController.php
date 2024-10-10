@@ -67,6 +67,7 @@ class UploadNoticeController extends Controller
                 $attributeValue = new AttributeValue();
                 $attributeValue->attribute_id = $attributeId;
                 $attributeValue->value = $value;
+                $attributeValue->notice_id = $notice->id;
                 $attributeValue->save();
             }
         }

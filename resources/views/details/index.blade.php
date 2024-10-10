@@ -4,7 +4,7 @@
         <!-- Título y precio -->
         <div class="flex justify-between items-center border-b pb-4">
             <h1 class="text-2xl font-bold text-gray-800">{{ $notice->title }}</h1>
-            <span class="text-xl font-semibold text-green-600">{{ $notice->price }}</span>
+            <span class="text-xl font-semibold text-green-600">{{ $notice->price }} CLP</span>
         </div>
 
         <!-- Valorización (solo si es un servicio) -->

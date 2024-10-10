@@ -40,9 +40,7 @@
                         <option value="">Selecciona una categoría</option>
 
                         @foreach ($categories as $category)
-                            {
                             <option value={{ $category->id }}>{{ $category->name }}</option>
-                            }
                         @endforeach
 
                     </select>

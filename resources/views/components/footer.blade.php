@@ -1,4 +1,4 @@
-<footer class="bg-darkGray text-white py-8">
+<footer class="bg-darkGray text-white py-8 mt-8">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Sección 1: Información de la empresa -->
         <div>
