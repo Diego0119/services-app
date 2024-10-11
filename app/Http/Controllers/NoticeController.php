@@ -47,7 +47,6 @@ class NoticeController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->attributes);
         $user = auth()->user();
         $notice = new Notice;
         $notice->user_id = $user->id;
@@ -66,18 +65,15 @@ class NoticeController extends Controller
 
         $notice->save();
 
-        $attribute_value = new AttributeValue();
 
-
-
-        // if (!empty($attributes)) {
-        //     foreach ($attributes as $attributeId => $value) {
-        //         $attributeValue = new AttributeValue();
-        //         $attributeValue->attribute_id = $attributeId;
-        //         $attributeValue->value = $value;
-        //         $attributeValue->save();
-        //     }
-        // }
+        if (!empty($attributes)) {
+            foreach ($attributes as $attribute) {
+                $attribute_value = new AttributeValue();
+                $attribute_value->attribute_id = $attribute->id;
+                $attribute_value->value = $attribute->name;
+                $attribute_value->save();
+            }
+        }
 
         redirect('/my-notices');
     }

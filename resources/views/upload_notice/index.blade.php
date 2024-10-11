@@ -128,7 +128,9 @@
                         input = document.createElement('input');
                         input.type = 'checkbox';
                         input.id = `attribute_${attr.id}`;
-                        input.name = `attribute[]`;
+                        // input.name = `attribute[]`;
+                        input.name = `attributes[${attr.name}]`;
+                        //input.name = `attributes[${attr.id}]`;
                         input.value = attr.id;
                         input.classList.add('form-checkbox', 'h-4', 'w-4', 'text-blue-600', 'border-gray-300',
                             'rounded'); // Clases de Tailwind para checkbox
@@ -138,7 +140,8 @@
                         input = document.createElement('input');
                         input.type = 'radio';
                         input.id = `attribute_${attr.id}`;
-                        input.name = `attribute[]`;
+                        // input.name = `attribute[]`;
+                        input.name = `attributes[${attr.name}]`;
                         input.value = attr.id;
                         input.classList.add('form-radio', 'h-4', 'w-4', 'text-blue-600',
                             'border-gray-300'); // Clases de Tailwind para radio
@@ -147,7 +150,7 @@
                     case 'select':
                         input = document.createElement('select');
                         input.id = `attribute_${attr.id}`;
-                        input.name = `attribute[]`;
+                        input.name = `attributes[${attr.name}]`;
                         input.classList.add('form-select', 'mt-1', 'block', 'w-full', 'rounded-md',
                             'border-gray-300', 'shadow-sm');
                         attr.options.forEach(option => {
@@ -162,7 +165,8 @@
                         input = document.createElement('input');
                         input.type = 'text';
                         input.id = `attribute_${attr.id}`;
-                        input.name = `attribute[]`;
+                        // input.name = `attribute[]`;
+                        input.name = `attributes[${attr.name}]`;
                         input.classList.add('mt-1', 'block', 'border', 'border-gray-300', 'rounded-md',
                             'shadow-sm'); // Clases de Tailwind para texto
                         break;
