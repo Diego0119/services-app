@@ -21,10 +21,9 @@ class CategoryController extends Controller
 
     public function showCategory($categoryId)
     {
+
         $category = Category::select('id', 'name')->where('id', $categoryId)->first();
-
         $notices = Notice::where('category_id', $categoryId)->get();
-
         return view('categories.index', data: [
             'category' => $category,
             'notices' => $notices

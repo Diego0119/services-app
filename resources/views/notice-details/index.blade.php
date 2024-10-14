@@ -34,6 +34,14 @@
                 </p>
             </div>
         </div>
+        {{-- aca deberian ir los atributos adicionales  --}}
+        @foreach ($attributes as $attribute)
+            <div class="w-2/3">
+                <p class="text-gray-700">
+                    {{ $attribute->name }}: {{ $attribute->value }}
+                </p>
+            </div>
+        @endforeach
     </div>
 
     <!-- Galería de imágenes (x-gallery-layout) -->

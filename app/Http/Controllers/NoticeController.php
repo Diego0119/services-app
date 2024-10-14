@@ -64,8 +64,6 @@ class NoticeController extends Controller
         }
 
         $notice->save();
-        // tengo que ver aca que esta llegando, porque en el atribute_id, a veces hay texto de los atributos
-        // en vez del id del atributo, debo pasar no el nombre del atributo en el html si no que el id
         $attributes = $request->input('attributes');
         // dd($attributes);
         if (!empty($attributes)) {
@@ -77,6 +75,8 @@ class NoticeController extends Controller
                 $attribute_value->save();
             }
         }
+        // no esta funcionando la redirección, deberia hacer que se redirija a
+        // la pantalla principal con un mensaje
         redirect('/my-notices');
     }
 
@@ -85,11 +85,18 @@ class NoticeController extends Controller
         $notice = Notice::where('id', $noticeId)->first();
         $user = User::where('id', $notice->user_id)->first();
         $commune = Commune::where('id', $notice->commune_id)->first();
+        $attributes = DB::table('attribute_values')
+            ->join('attributes', 'attribute_values.attribute_id', '=', 'attributes.id')
+            ->where('attribute_values.notice_id', $noticeId)
+            ->select('attributes.name as name', 'attribute_values.value as value')
+            ->get();
 
-        return view('details.index', [
+
+        return view('notice-details.index', [
             'notice' => $notice,
             'user' => $user,
             'commune' => $commune,
+            'attributes' => $attributes
         ]);
 
     }
