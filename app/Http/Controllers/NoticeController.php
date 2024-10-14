@@ -88,7 +88,7 @@ class NoticeController extends Controller
         $attributes = DB::table('attribute_values')
             ->join('attributes', 'attribute_values.attribute_id', '=', 'attributes.id')
             ->where('attribute_values.notice_id', $noticeId)
-            ->select('attributes.name as name', 'attribute_values.value as value')
+            ->select('attributes.name as name', 'attribute_values.value as value', 'attributes.type as type')
             ->get();
 
 

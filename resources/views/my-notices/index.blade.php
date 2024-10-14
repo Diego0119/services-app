@@ -26,5 +26,6 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $notices->links() }}
     </div>
 </x-dashboard-layout>

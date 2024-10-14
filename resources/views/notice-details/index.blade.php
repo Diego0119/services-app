@@ -38,7 +38,11 @@
         @foreach ($attributes as $attribute)
             <div class="w-2/3">
                 <p class="text-gray-700">
-                    {{ $attribute->name }}: {{ $attribute->value }}
+                    @if ($attribute->type != 'checkbox')
+                        {{ $attribute->name }}: {{ $attribute->value }}
+                    @elseif ($attribute->type == 'checkbox')
+                        {{ $attribute->name }}: Si
+                    @endif
                 </p>
             </div>
         @endforeach
