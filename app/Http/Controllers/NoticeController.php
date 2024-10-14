@@ -64,17 +64,19 @@ class NoticeController extends Controller
         }
 
         $notice->save();
-
-
+        // tengo que ver aca que esta llegando, porque en el atribute_id, a veces hay texto de los atributos
+        // en vez del id del atributo, debo pasar no el nombre del atributo en el html si no que el id
+        $attributes = $request->input('attributes');
+        // dd($attributes);
         if (!empty($attributes)) {
-            foreach ($attributes as $attribute) {
+            foreach ($attributes as $attribute_key => $attribute_name) {
                 $attribute_value = new AttributeValue();
-                $attribute_value->attribute_id = $attribute->id;
-                $attribute_value->value = $attribute->name;
+                $attribute_value->attribute_id = $attribute_key;
+                $attribute_value->value = $attribute_name;
+                $attribute_value->notice_id = $notice->id;
                 $attribute_value->save();
             }
         }
-
         redirect('/my-notices');
     }
 
