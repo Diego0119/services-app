@@ -10,7 +10,7 @@
         <!-- Producto/Servicio 1 -->
         @if (count($notices) > 0)
             @foreach ($notices as $notice)
-                <div class="flex-shrink-0 w-66 bg-gray-100 p-4 rounded-lg shadow-md text-center">
+                <div class="flex-shrink-0 w-62 bg-gray-100 p-4 rounded-lg shadow-md text-center">
                     <img src="https://via.placeholder.com/300" alt="Producto 1"
                         class="w-full h-48 object-cover rounded-md mb-4">
                     <h3 class="text-lg font-bold mb-2">{{ $notice->title }}</h3>
@@ -27,5 +27,4 @@
 
             </div>
         @endif
-
 </x-app-layout>
