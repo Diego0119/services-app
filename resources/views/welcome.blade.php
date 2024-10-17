@@ -120,78 +120,135 @@
                     <a class="cursor-pointer hover:scale-105 transition-all"
                         href="{{ route('category.show', $category->id) }}">
                         <div class="bg-gray-100 p-4 rounded-lg shadow-md">
-                            <!-- Icono dinámico o uno por defecto -->
-                            <i class="fas fa-building fa-3x text-center text-primary"></i>
+                            @php
+                                switch ($category->name) {
+                                    case 'Casa':
+                                        $icon = 'fa-house';
+                                        break;
+                                    case 'Oficina':
+                                        $icon = 'fa-briefcase';
+                                        break;
+                                    case 'Departamento':
+                                        $icon = 'fa-building';
+                                        break;
+                                    case 'Almacenamiento y bodega':
+                                        $icon = 'fa-archive';
+                                        break;
+                                    case 'Habitación':
+                                        $icon = 'fa-bed';
+                                        break;
+                                    case 'Quincho':
+                                        $icon = 'fa-cutlery';
+                                        break;
+                                    case 'Vehículos':
+                                        $icon = 'fa-car';
+                                        break;
+                                    case 'Electrónica':
+                                        $icon = 'fa-laptop';
+                                        break;
+                                    case 'Ropa':
+                                        $icon = 'fa-tshirt';
+                                        break;
+                                    case 'Muebles':
+                                        $icon = 'fa-chair';
+                                        break;
+                                    case 'Servicios':
+                                        $icon = 'fa-check-circle';
+                                        break;
+                                    case 'Instrumentos Musicales':
+                                        $icon = 'fa-music';
+                                        break;
+                                    case 'Construcción':
+                                        $icon = 'fa-wrench';
+                                        break;
+                                    case 'Hobbies y Deportes':
+                                        $icon = 'fa-running';
+                                        break;
+                                    case 'Otros':
+                                        $icon = 'fa-info-circle';
+                                        break;
+
+                                    default:
+                                        $icon = 'fa-question-circle'; // Icono por defecto si no coincide
+                                        break;
+                                }
+                            @endphp
+                            <i class="fas {{ $icon }} fa-3x text-center text-primary"></i>
                             <p class="text-center font-bold text-lg mt-2">{{ $category->name }}</p>
                         </div>
                     </a>
                 @endforeach
 
+                {{--
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                    <i class="fas fa-house fa-3x text-center text-primary"></i>
+                    <p class="text-center font-bold text-lg mt-2">Inmuebles</p>
+                    <p class="text-center text-sm text-gray-500">Marca, modelo, transmisión, combustible, etc.</p>
+                </div> --}}
 
-
-
-                {{-- <!-- Categoría: Vehículos -->
+                {{--
+                <!-- Categoría: Vehículos -->
                 <div class="bg-gray-100 p-4 rounded-lg shadow-md">
                     <i class="fas fa-car fa-3x text-center text-primary"></i>
                     <p class="text-center font-bold text-lg mt-2">Vehículos</p>
                     <p class="text-center text-sm text-gray-500">Marca, modelo, transmisión, combustible, etc.</p>
-                </div>
+                </div> --}}
 
                 <!-- Categoría: Vestuario -->
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                {{-- <div class="bg-gray-100 p-4 rounded-lg shadow-md">
                     <i class="fas fa-tshirt fa-3x text-center text-primary"></i>
                     <p class="text-center font-bold text-lg mt-2">Vestuario</p>
                     <p class="text-center text-sm text-gray-500">Tipo, estado, género, talla</p>
-                </div>
+                </div> --}}
 
-                <!-- Categoría: Instrumentos Musicales -->
+                {{-- <!-- Categoría: Instrumentos Musicales -->
                 <div class="bg-gray-100 p-4 rounded-lg shadow-md">
                     <i class="fas fa-guitar fa-3x text-center text-primary"></i>
                     <p class="text-center font-bold text-lg mt-2">Instrumentos Musicales</p>
                     <p class="text-center text-sm text-gray-500">&lt;Sin características específicas adicionales&gt;
                     </p>
-                </div>
+                </div> --}}
 
                 <!-- Categoría: Computación y Electrónica -->
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                {{-- <div class="bg-gray-100 p-4 rounded-lg shadow-md">
                     <i class="fas fa-laptop fa-3x text-center text-primary"></i>
                     <p class="text-center font-bold text-lg mt-2">Computación y Electrónica</p>
                     <p class="text-center text-sm text-gray-500">&lt;Sin características específicas adicionales&gt;
                     </p>
-                </div>
+                </div> --}}
 
                 <!-- Categoría: Construcción (Herramientas y Equipamiento) -->
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                {{-- <div class="bg-gray-100 p-4 rounded-lg shadow-md">
                     <i class="fas fa-tools fa-3x text-center text-primary"></i>
                     <p class="text-center font-bold text-lg mt-2">Construcción (Herramientas y Equipamiento)</p>
                     <p class="text-center text-sm text-gray-500">&lt;Sin características específicas
                         adicionales&gt;
                     </p>
-                </div>
+                </div> --}}
 
                 <!-- Categoría: Artículos del Hogar -->
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                {{-- <div class="bg-gray-100 p-4 rounded-lg shadow-md">
                     <i class="fas fa-couch fa-3x text-center text-primary"></i>
                     <p class="text-center font-bold text-lg mt-2">Artículos del Hogar</p>
                     <p class="text-center text-sm text-gray-500">&lt;Sin características específicas
-                        adicionales&gt;</p>
-                </div>
+                     adicionales&gt;</p>
+                </div> --}}
 
                 <!-- Categoría: Hobbies y Deportes -->
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                {{-- <div class="bg-gray-100 p-4 rounded-lg shadow-md">
                     <i class="fas fa-futbol fa-3x text-center text-primary"></i>
                     <p class="text-center font-bold text-lg mt-2">Hobbies y Deportes</p>
                     <p class="text-center text-sm text-gray-500">&lt;Sin características específicas
-                        adicionales&gt;
+                     adicionales&gt;
                     </p>
-                </div>
+                </div> --}}
 
                 <!-- Categoría: Otros Artículos -->
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                {{-- <div class="bg-gray-100 p-4 rounded-lg shadow-md">
                     <i class="fas fa-box fa-3x text-center text-primary"></i>
                     <p class="text-center font-bold text-lg mt-2">Otros Artículos</p>
                     <p class="text-center text-sm text-gray-500">&lt;Sin características específicas
-                        adicionales&gt;
+                    adicionales&gt;
                     </p>
                 </div> --}}
 

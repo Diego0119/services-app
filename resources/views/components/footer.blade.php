@@ -53,6 +53,7 @@
 
     <!-- Footer Inferior -->
     <div class="border-t border-gray-700 mt-8 pt-4 text-center">
-        <p class="text-sm">© 2024 deNexos.cl - Todos los derechos reservados</p>
+        <p class="text-sm">© 2024 deNexos.cl - Todos los derechos reservados | Diseñado y desarrollado por Diego Alonso
+            Sanhueza Aguilar</p>
     </div>
 </footer>
