@@ -32,7 +32,9 @@
             <li><a href="{{ route('my-notices.index') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mis
                     Avisos</a>
             </li>
-            <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Usuarios</a></li>
+            @if (Auth::user()->isAdmin())
+                <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Usuarios</a></li>
+            @endif
             <li><a href="{{ route('account.index') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mi Cuenta</a>
             </li>
             <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Reportes</a></li>
@@ -44,15 +46,14 @@
     </div>
 
     <div class="flex flex-row justify-between items-center bg-white py-4">
-        <div class="">
+        <div>
             @php
-                $user_name = Auth::user()->name;
-
+                $user = Auth::user();
             @endphp
             @if (Auth::user()->isClient())
-                {
-                <p class="text-black ml-72">{{ $user_name }} - Cliente</p>
-                }
+                <p class="text-black ml-72">{{ $user->name }} - Cliente</p>
+            @elseif(Auth::user()->isAdmin())
+                <p class="text-black ml-72">{{ $user->name }} - Administrador</p>
             @endif
         </div>
         <div>
@@ -61,6 +62,7 @@
             </a>
         </div>
     </div>
+
 
     <!-- Aquí se inyecta el contenido de las vistas del dashboard -->
     <div class="min-h-screen bg-gray-100">

@@ -57,4 +57,11 @@ class User extends Authenticatable
             return true;
         }
     }
+
+    public function isAdmin()
+    {
+        if ($this->role_id == 1) {
+            return true;
+        }
+    }
 }

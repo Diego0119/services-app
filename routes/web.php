@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommunesController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
@@ -10,6 +11,7 @@ use App\Http\Controllers\DetailsController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\MyNoticesController;
 use App\Http\Controllers\UploadNoticeController;
+
 
 
 Route::get('/', [WelcomeController::class, 'index'])->name('home');
@@ -24,6 +26,7 @@ Route::get('get-communes/{region_id}', [CommunesController::class, 'getCommunes'
 Route::get('/category/{id}', [CategoryController::class, 'showCategory'])->name('category.show');
 Route::get('/notice/{id}', [NoticeController::class, 'showNotice'])->name('notice.show');
 
+Route::get('/search-notice', [NoticeController::class, 'search'])->name('search-notice');
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');

@@ -100,4 +100,17 @@ class NoticeController extends Controller
         ]);
 
     }
+
+    public function search(Request $request)
+    {
+
+        $query = $request->input('query');
+        $location = $request->input('location');
+
+        $results = Notice::where('title', 'LIKE', "%{$query}%")
+            ->where('location', 'LIKE', "%{$location}%")
+            ->get();
+
+        return view('search-results', ['results' => $results]);
+    }
 }
