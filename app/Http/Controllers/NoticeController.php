@@ -103,10 +103,9 @@ class NoticeController extends Controller
 
     public function search_notices(Request $request)
     {
-
+        $locationId = $request->input('location_id');
         $query = $request->input('query');
-        $location = $request->input('location');
-
+        $locationId = $request->input('location_id');
         $results = Notice::where('title', 'LIKE', "%{$query}%")
             // ->where('location', 'LIKE', "%{$location}%")
             ->get();
@@ -127,7 +126,8 @@ class NoticeController extends Controller
             if (count($data) > 0) {
                 $output .= '<ul class="list-none p-0 m-0">';
                 foreach ($data as $row) {
-                    $output .= '<li class="p-2 border-b border-gray-300 cursor-pointer">' . $row->name . '</li>';
+                    $output .= '<li class="p-2 border-b border-gray-300 cursor-pointer" data-id="' . $row->id . '" data-name="' . $row->name . '">' . $row->name . '</li>';
+
                 }
                 $output .= '</ul>';
             } else {
