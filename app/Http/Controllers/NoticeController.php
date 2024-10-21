@@ -101,16 +101,41 @@ class NoticeController extends Controller
 
     }
 
-    public function search(Request $request)
+    public function search_notices(Request $request)
     {
 
         $query = $request->input('query');
         $location = $request->input('location');
 
         $results = Notice::where('title', 'LIKE', "%{$query}%")
-            ->where('location', 'LIKE', "%{$location}%")
+            // ->where('location', 'LIKE', "%{$location}%")
             ->get();
 
-        return view('search-results', ['results' => $results]);
+        return view('search.index', [
+            'results' => $results,
+            'query' => $query
+        ]);
     }
+
+    public function search(Request $request)
+    {
+        if ($request->ajax()) {
+            $data = Commune::where('id', 'like', '%' . $request->search . '%')
+                ->orWhere('name', 'like', '%' . $request->search . '%')->get();
+
+            $output = '';
+            if (count($data) > 0) {
+                $output .= '<ul class="list-none p-0 m-0">';
+                foreach ($data as $row) {
+                    $output .= '<li class="p-2 border-b border-gray-300 cursor-pointer">' . $row->name . '</li>';
+                }
+                $output .= '</ul>';
+            } else {
+                $output = '<li class="p-2">Sin resultados</li>';
+            }
+            return response($output);
+        }
+    }
+
+
 }

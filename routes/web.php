@@ -26,7 +26,11 @@ Route::get('get-communes/{region_id}', [CommunesController::class, 'getCommunes'
 Route::get('/category/{id}', [CategoryController::class, 'showCategory'])->name('category.show');
 Route::get('/notice/{id}', [NoticeController::class, 'showNotice'])->name('notice.show');
 
-Route::get('/search-notice', [NoticeController::class, 'search'])->name('search-notice');
+Route::get('/search-notice', [NoticeController::class, 'search_notices'])->name('search-notice');
+
+// search route
+
+Route::get("search", [NoticeController::class, 'search'])->name('search');
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');
