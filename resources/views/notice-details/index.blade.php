@@ -8,16 +8,10 @@
         </div>
 
         <!-- Valorización (solo si es un servicio) -->
-        <div class="flex items-center space-x-2">
+        {{-- <div class="flex items-center space-x-2">
             <p class="text-yellow-500 text-lg">★★★★★</p>
             <p class="text-gray-600">(Valorización del servicio)</p>
-        </div>
-
-        <!-- Contacto, nombre y ubicación del vendedor -->
-        <div class="flex flex-col space-y-2">
-            <p class="text-gray-800">Contacto: {{ $user->name }}</p>
-            <p class="text-gray-600">Ubicación: {{ $commune->name }}</p>
-        </div>
+        </div> --}}
 
         <!-- Imagen y descripción -->
         <div class="flex flex-row space-x-6">
@@ -46,7 +40,27 @@
                 </p>
             </div>
         @endforeach
+        @if (auth()->user())
+            <!-- Contacto, nombre y ubicación del vendedor -->
+            <div class="flex flex-col space-y-2">
+                <p class="text-gray-800">Nombre: {{ $user->name }}</p>
+                <p class="text-gray-800">Correo de contacto: {{ $user->email }}</p>
+                <p class="text-gray-800">Número telefónico: +569 12345678</p>
+                <p class="text-gray-600">Ubicación: {{ $commune->name }}</p>
+            </div>
+        @else
+            <div class="flex flex-col space-y-4 mt-4">
+                <p class="text-gray-700">Contacto por correo, si quieres ver toda la información de contacto <a
+                        href={{ route('register') }} class="text-blue-500 underline">registrate aquí</a></p>
+                <a href="mailto:{{ $user->email }}?subject=Consulta&body=Hola, me gustaría hacer una consulta sobre..."
+                    class="bg-secondary text-white text-center rounded px-4 py-2 inline-block sm:w-40">
+                    Redactar correo
+                </a>
+            </div>
+        @endif
+
     </div>
+
 
     <!-- Galería de imágenes (x-gallery-layout) -->
     <div class="bg-white p-6 rounded-lg shadow-md my-4">

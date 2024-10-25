@@ -17,7 +17,8 @@ class NoticeController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        // Aplicar middleware a métodos específicos
+        $this->middleware('auth')->only(['uploadNotice', 'store']);
     }
     public function index()
     {

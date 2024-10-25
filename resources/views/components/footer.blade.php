@@ -11,10 +11,9 @@
         <div>
             <h3 class="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
             <ul>
-                <li><a href="#" class="hover:underline text-sm">Inicio</a></li>
-                <li><a href="#" class="hover:underline text-sm">Acerca de</a></li>
-                <li><a href="#" class="hover:underline text-sm">Servicios</a></li>
+                <li><a href={{ route('home') }} class="hover:underline text-sm">Inicio</a></li>
                 <li><a href="#" class="hover:underline text-sm">Contacto</a></li>
+                <li><a href="#" class="hover:underline text-sm">Política de privacidad </a></li>
             </ul>
         </div>
 
@@ -23,11 +22,9 @@
             <h3 class="text-lg font-semibold mb-4">Contacto</h3>
             <ul class="text-sm">
                 <li>Email: <a href="mailto:info@denexos.cl" class="hover:underline">info@denexos.cl</a></li>
-                <li>Teléfono: +56 9 1234 5678</li>
-                <li>Dirección: Calle Falsa 123, Santiago, Chile</li>
             </ul>
 
-            <!-- Redes Sociales -->
+            {{-- <!-- Redes Sociales -->
             <div class="mt-4">
                 <p class="font-semibold">Síguenos en:</p>
                 <div class="flex space-x-4 mt-2">
@@ -47,7 +44,7 @@
                         </svg>
                     </a>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 
