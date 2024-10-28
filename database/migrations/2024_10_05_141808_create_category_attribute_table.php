@@ -10,15 +10,20 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('communes', function (Blueprint $table) {
+        Schema::create('category_attribute', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('region_id')->index();
-            $table->string('name');
+            $table->unsignedBigInteger('category_id')->index();
+            $table->unsignedBigInteger('attribute_id')->index();
             $table->timestamps();
 
-            $table->foreign('region_id')
+            $table->foreign('category_id')
                 ->references('id')
-                ->on('region')
+                ->on('categories')
+                ->onDelete('cascade');
+
+            $table->foreign('attribute_id')
+                ->references('id')
+                ->on('attributes')
                 ->onDelete('cascade');
         });
     }
@@ -28,6 +33,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('communes');
+        Schema::dropIfExists('category_attribute');
     }
 };

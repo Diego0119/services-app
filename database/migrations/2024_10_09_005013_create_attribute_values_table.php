@@ -19,7 +19,7 @@ return new class extends Migration {
 
             $table->foreign('attribute_id')
                 ->references('id')
-                ->on('atribbute')
+                ->on('attributes')
                 ->onDelete('cascade');
 
             $table->foreign('notice_id')

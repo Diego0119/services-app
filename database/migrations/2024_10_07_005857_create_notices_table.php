@@ -17,16 +17,17 @@ return new class extends Migration {
                 $table->unsignedBigInteger('user_id')->index();
                 $table->unsignedBigInteger('commune_id')->index();
                 $table->unsignedBigInteger('category_id')->index();
+                $table->unsignedBigInteger('highlighted_id')->default(1)->index();
                 $table->string('title');
                 $table->text('description');
                 $table->float('price', 15, 2);
-                $table->boolean('highlighted');
                 $table->enum('status', allowed: [
                     'EN_REVISION',
                     'ACTIVO',
                     'PAUSADO',
                 ]);
-
+                $table->string('phone', 15)->nullable();
+                $table->string('url', 2048)->nullable();
                 $table->timestamps();
 
                 $table->foreign('user_id')
@@ -42,6 +43,11 @@ return new class extends Migration {
                 $table->foreign('category_id')
                     ->references('id')
                     ->on('categories')
+                    ->onDelete('cascade');
+
+                $table->foreign('highlighted_id')
+                    ->references('id')
+                    ->on('highlighted')
                     ->onDelete('cascade');
             }
 

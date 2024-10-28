@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use DB;
 
 class HighlightedSeeder extends Seeder
 {
@@ -26,5 +27,7 @@ class HighlightedSeeder extends Seeder
                 'slug' => 'matriz',
             ],
         ];
+
+        DB::table('highlighted')->insert($data);
     }
 }

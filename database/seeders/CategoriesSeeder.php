@@ -25,10 +25,11 @@ class CategoriesSeeder extends Seeder
             ['name' => 'Ropa'],
             ['name' => 'Muebles'],
             ['name' => 'Servicios'],
-            ['name' => 'Otros'],
             ['name' => 'Instrumentos Musicales'],
             ['name' => 'Construcción'],
             ['name' => 'Hobbies y Deportes'],
+            ['name' => 'Otros'],
+
         ];
         Category::insert($data);
     }
