@@ -19,7 +19,7 @@ class Notice extends Model
         'description',
         'price',
         'status',
-        'highlighted',
+        'highlighted_id',
     ];
 
     public function category()
@@ -35,5 +35,9 @@ class Notice extends Model
     public function attributeValues()
     {
         return $this->hasMany(AttributeValue::class);
+    }
+    public function highlighted()
+    {
+        return $this->belongsTo(Highlighted::class);
     }
 }
