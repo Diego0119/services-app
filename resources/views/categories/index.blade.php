@@ -10,7 +10,7 @@
         <!-- Producto/Servicio 1 -->
         @if (count($notices) > 0)
             @foreach ($notices as $notice)
-                @if (!$notice->status == ('EN_REVISIÓN' || 'PAUSADO'))
+                @if ($notice->status == 'ACTIVO')
                     <div class="flex-shrink-0 w-62 bg-gray-100 p-4 rounded-lg shadow-md text-center">
                         <img src="https://via.placeholder.com/300" alt="Producto 1"
                             class="w-full h-48 object-cover rounded-md mb-4">

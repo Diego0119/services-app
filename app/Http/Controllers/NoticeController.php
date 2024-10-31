@@ -149,11 +149,15 @@ class NoticeController extends Controller
         );
     }
 
-    public function storeModifiedNotice($notice)
+    public function storeModifiedNotice($noticeId, Request $request)
     {
-        $notice = Notice::where('id', $notice->id)->first();
+        $notice = Notice::where('id', $noticeId)->first();
 
+        $notice->status = $request->input('status');
+        $notice->save();
 
+        return redirect()->route('dashboard')
+            ->withSuccess(__('Orden modificada correctamente'));
 
     }
 

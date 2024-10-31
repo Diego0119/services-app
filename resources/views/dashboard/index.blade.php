@@ -14,11 +14,18 @@
             <!-- Contenido principal del panel -->
             <main class="flex-1 p-6">
                 <h2 class="text-2xl font-semibold mb-4">Bienvenido al Panel de Administración</h2>
+
+                <!-- Mensaje de éxito -->
+                @if (session('success'))
+                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
                 <div class="bg-white shadow-md rounded-lg p-4 mb-6">
                     <h3 class="text-xl font-semibold text-gray-800">Estadísticas</h3>
-                    <p class="mt-2">Total de usuarios: <span class="font-bold">120</span></p>
-                    <p>Total de ventas: <span class="font-bold">$5,300</span></p>
-                    <p>Tickets abiertos: <span class="font-bold">8</span></p>
+                    <p class="mt-2">Total de anuncios: <span class="font-bold">12</span></p>
+                    <p>Vistas totales: <span class="font-bold">$5,300</span></p>
                 </div>
             </main>
         </div>

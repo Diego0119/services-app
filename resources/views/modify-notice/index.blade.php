@@ -4,8 +4,6 @@
 
         <form action="{{ route('notice.update', $notice) }}" method="POST">
             @csrf
-            @method('PUT')
-
             <!-- Título del anuncio -->
             <div class="mb-4">
                 <label for="title" class="block text-gray-700">Título</label>
@@ -31,7 +29,7 @@
             <div class="mb-4">
                 <label for="status" class="block text-gray-700">Estado</label>
                 <select name="status" id="status" class="w-full px-3 py-2 border border-gray-300 rounded">
-                    <option value="active" {{ old('status', $notice->status) === 'active' ? 'selected' : '' }}>Visible
+                    <option value="ACTIVO" {{ old('status', $notice->status) === 'active' ? 'selected' : '' }}>Visible
                     </option>
                     <option value="PAUSADO" {{ old('status', $notice->status) === 'inactive' ? 'selected' : '' }}>
                         Pausado</option>
