@@ -1,30 +1,35 @@
 <x-app-layout>
     <x-gallery-layout />
     @if ($category)
-        <p class="text-primary text-center font-bold text-xl">{{ $category->name }}</p>
+        <p class="text-primary text-center font-bold text-xl mt-4">{{ $category->name }}</p>
     @else
-        <p class="text-primary text-center font-bold text-xl">Esa categoria no existe</p>
+        <p class="text-primary text-center font-bold text-xl mt-4">Esa categoria no existe</p>
     @endif
+
     <!-- Carrusel Horizontal -->
-    <div class="grid grid-cols-4 space-x-2 p-4 mt-4 bg-white rounded-md shadow-md">
-        <!-- Producto/Servicio 1 -->
+    <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-6 mt-6 bg-white rounded-md shadow-md">
+        <!-- Producto/Servicio -->
         @if (count($notices) > 0)
             @foreach ($notices as $notice)
                 @if ($notice->status == 'ACTIVO')
-                    <div class="flex-shrink-0 w-62 bg-gray-100 p-4 rounded-lg shadow-md text-center">
-                        <img src="https://via.placeholder.com/300" alt="Producto 1"
-                            class="w-full h-48 object-cover rounded-md mb-4">
-                        <h3 class="text-lg font-bold mb-2">{{ $notice->title }}</h3>
-                        <p class="text-gray-700 mb-2"></p>
-                        <p class="text-green-500 font-bold mb-2">{{ $notice->price }} CLP</p>
-                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"><a
-                                href="{{ route('notice.show', $notice->id) }}">Ver</a></button>
+                    <div
+                        class="flex flex-col bg-gray-100 p-6 rounded-lg shadow-md text-center space-y-4 hover:scale-105 transition-all cursor-pointer">
+                        <img src="https://via.placeholder.com/300" alt="Producto"
+                            class="w-full h-44 object-cover rounded-md">
+                        <h3 class="text-lg font-bold">{{ $notice->title }}</h3>
+                        <p class="text-gray-700"></p>
+                        <p class="text-green-500 font-bold">{{ $notice->price }} CLP</p>
+                        <a href="{{ route('notice.show', $notice->id) }}"
+                            class="bg-secondary text-white px-4 py-2 rounded hover:bg-primary inline-block w-1/2 mx-auto">Ver
+                            mas</a>
                     </div>
                 @endif
             @endforeach
         @else
-            <div class="flex-shrink-0 w-66 p-4 rounded-lg text-center">
-                <p class="text-gray-700 mb-2">No hay posts</p>
+            <div class="flex flex-col items-center justify-center w-full p-6 text-center">
+                <p class="text-gray-700">No hay posts</p>
             </div>
         @endif
+    </div>
 </x-app-layout>

@@ -15,12 +15,18 @@
             <main class="flex-1 p-6">
                 <h2 class="text-2xl font-semibold mb-4">Bienvenido al Panel de Administración</h2>
 
-                <!-- Mensaje de éxito -->
+                <!-- Mensajes -->
                 @if (session('success'))
                     <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
                         {{ session('success') }}
                     </div>
                 @endif
+                @if (session('warning'))
+                    <div class="bg-yellow-300 border border-yellow-600 text-white- px-4 py-3 rounded relative mb-4">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
 
                 <div class="bg-white shadow-md rounded-lg p-4 mb-6">
                     <h3 class="text-xl font-semibold text-gray-800">Estadísticas</h3>

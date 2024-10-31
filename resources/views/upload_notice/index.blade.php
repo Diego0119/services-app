@@ -3,6 +3,11 @@
         <!-- Contenido principal -->
         <div class="flex-1 flex flex-col md:ml-64 p-6">
             <!-- Título de la sección -->
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
             <h2 class="text-2xl font-bold text-black mb-6">Subir un nuevo aviso</h2>
 
             <!-- Formulario -->

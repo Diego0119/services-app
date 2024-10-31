@@ -63,7 +63,6 @@ class NoticeController extends Controller
 
         $notice->save();
         $attributes = $request->input('attributes');
-        // dd($attributes);
         if (!empty($attributes)) {
             foreach ($attributes as $attribute_key => $attribute_name) {
 
@@ -74,10 +73,9 @@ class NoticeController extends Controller
                 $attribute_value->save();
             }
         }
-        // no esta funcionando la redirección, deberia hacer que se redirija a
-        // la pantalla principal con un mensaje
-        // redirect()->route('home')->with('success', 'Mensaje de éxito');
-        // // return view('my-notices.index');
+        return redirect()->route('dashboard')
+            ->withSuccess(__('El aviso se encuentra en revisión, seras notificado cuando se haya aprobado.'));
+
     }
 
     public function showNotice($noticeId)
@@ -157,7 +155,7 @@ class NoticeController extends Controller
         $notice->save();
 
         return redirect()->route('dashboard')
-            ->withSuccess(__('Orden modificada correctamente'));
+            ->withSuccess(__('Anuncio modificado correctamente'));
 
     }
 
