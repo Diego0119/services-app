@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->unsignedBigInteger('notice_id')->index();
             $table->unsignedBigInteger('attribute_id')->index();
-            $table->text('value');
+            $table->text('value')->nullable();
 
 
             $table->foreign('attribute_id')

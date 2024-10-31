@@ -28,7 +28,7 @@
                 <!-- Precio -->
                 <div class="mb-4">
                     <label for="precio" class="block text-sm font-medium text-gray-700">Precio</label>
-                    <input type="number" name="precio" id="precio"
+                    <input type="text" name="precio" id="precio"
                         class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Ingresa el precio"
                         required>
                 </div>

@@ -37,7 +37,6 @@
             @endif
             <li><a href="{{ route('account.index') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mi Cuenta</a>
             </li>
-            <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Reportes</a></li>
             <form action="{{ route('logout') }}" method="POST" style="display: inline;" class="ml-2">
                 @csrf
                 <button type="submit" class="block font-bold px-4 py-2 hover:bg-gray-600">Cerrar sesión</button>

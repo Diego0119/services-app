@@ -23,6 +23,12 @@
 
 <body class="font-sans antialiased h-screen flex flex-col bg-lightGray space-y-6">
     <x-navbar />
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     {{-- container mx-auto p-4 flex-1 --}}
     <div class="mx-4">
         <!-- Publicidad -->

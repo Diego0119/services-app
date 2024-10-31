@@ -55,7 +55,7 @@ class AttributesSeeder extends Seeder
             ['name' => 'Superficie de la habitación', 'type' => 'checkbox'],
             ['name' => 'Baño individual', 'type' => 'checkbox'],
             ['name' => 'Cocina compartida', 'type' => 'checkbox'],
-            ['name' => 'Numero de personas', 'type' => 'numeric']
+            ['name' => 'Número de personas', 'type' => 'numeric']
 
         ];
 

@@ -55,20 +55,18 @@ class NoticeController extends Controller
         $notice->description = $request->input('descripcion');
         $notice->price = $request->input('precio');
         $notice->category_id = $request->input('categoria');
-        // $notice->region_id = $request->input('region');
+        $notice->phone = +56912345678;
+        $notice->highlighted_id = 1;
+        $notice->url = "";
         $notice->commune_id = $request->input('commune');
         $notice->status = 'EN_REVISION';
-        if ($request->hasFile('imagen')) {
-            $file = $request->file('imagen');
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads'), $filename);
-        }
 
         $notice->save();
         $attributes = $request->input('attributes');
         // dd($attributes);
         if (!empty($attributes)) {
             foreach ($attributes as $attribute_key => $attribute_name) {
+
                 $attribute_value = new AttributeValue();
                 $attribute_value->attribute_id = $attribute_key;
                 $attribute_value->value = $attribute_name;
@@ -78,7 +76,8 @@ class NoticeController extends Controller
         }
         // no esta funcionando la redirección, deberia hacer que se redirija a
         // la pantalla principal con un mensaje
-        redirect('/my-notices');
+        // redirect()->route('home')->with('success', 'Mensaje de éxito');
+        // // return view('my-notices.index');
     }
 
     public function showNotice($noticeId)
@@ -138,5 +137,24 @@ class NoticeController extends Controller
         }
     }
 
+    public function modifyNotice($noticeId)
+    {
+        $notice = Notice::where('id', $noticeId)->first();
+        return view(
+            'modify-notice.index'
+            ,
+            [
+                'notice' => $notice
+            ]
+        );
+    }
+
+    public function storeModifiedNotice($notice)
+    {
+        $notice = Notice::where('id', $notice->id)->first();
+
+
+
+    }
 
 }
