@@ -4,7 +4,7 @@
     <!-- Carrusel Horizontal -->
     <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 mt-6 bg-white rounded-md shadow-md">
-        <!-- Producto/Servico -->
+        <!-- Producto/Servicio -->
         @if (count($results) > 0)
             @foreach ($results as $result)
                 @if ($result->status == 'ACTIVO')
