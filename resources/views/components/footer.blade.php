@@ -12,8 +12,8 @@
             <h3 class="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
             <ul>
                 <li><a href={{ route('home') }} class="hover:underline text-sm">Inicio</a></li>
-                <li><a href={{ route('contact') }} class="hover:underline text-sm">Contacto</a></li>
                 <li><a href={{ route('policies') }} class="hover:underline text-sm">Política de privacidad </a></li>
+                <li><a href={{ route('services') }} class="hover:underline text-sm">Servicios </a></li>
             </ul>
         </div>
 
@@ -21,7 +21,7 @@
         <div>
             <h3 class="text-lg font-semibold mb-4">Contacto</h3>
             <ul class="text-sm">
-                <li>Email: <a href="mailto:info@denexos.cl" class="hover:underline">info@denexos.cl</a></li>
+                <li><a href={{ route('contact') }} class="hover:underline text-sm">Contactanos aquí</a></li>
             </ul>
 
             {{-- <!-- Redes Sociales -->

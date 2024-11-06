@@ -29,7 +29,7 @@
 
         <div class="mb-6">
             <button type="submit"
-                class="w-full py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-blue-700">
+                class="w-full py-3 bg-primary text-white font-semibold rounded-lg hover:bg-secondary">
                 Enviar Mensaje
             </button>
         </div>

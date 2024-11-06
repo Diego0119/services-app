@@ -33,6 +33,9 @@ Route::get('/privacy-policies', function () {
 Route::get('/contact', function () {
     return view('contact.index');
 })->name('contact');
+Route::get('/services', function () {
+    return view('services.index');
+})->name('services');
 Route::get('/search-notice', [NoticeController::class, 'search_notices'])->name('search-notice');
 
 // search route
