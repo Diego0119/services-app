@@ -27,7 +27,12 @@ Route::get('/category/{id}', [CategoryController::class, 'showCategory'])->name(
 Route::get('/notice/{id}', [NoticeController::class, 'showNotice'])->name('notice.show');
 Route::get('/notice-modify/{id}', [NoticeController::class, 'modifyNotice'])->name('notice.modify');
 Route::post('/notice-modify/{id}', [NoticeController::class, 'storeModifiedNotice'])->name('notice.update');
-
+Route::get('/privacy-policies', function () {
+    return view('privacy-policies.index');
+})->name('policies');
+Route::get('/contact', function () {
+    return view('contact.index');
+})->name('contact');
 Route::get('/search-notice', [NoticeController::class, 'search_notices'])->name('search-notice');
 
 // search route

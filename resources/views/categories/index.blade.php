@@ -6,7 +6,6 @@
         <p class="text-primary text-center font-bold text-xl mt-4">Esa categoria no existe</p>
     @endif
 
-    <!-- Carrusel Horizontal -->
     <div
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-6 mt-6 bg-white rounded-md shadow-md">
         <!-- Producto/Servicio -->

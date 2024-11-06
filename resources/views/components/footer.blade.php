@@ -12,8 +12,8 @@
             <h3 class="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
             <ul>
                 <li><a href={{ route('home') }} class="hover:underline text-sm">Inicio</a></li>
-                <li><a href="#" class="hover:underline text-sm">Contacto</a></li>
-                <li><a href="#" class="hover:underline text-sm">Política de privacidad </a></li>
+                <li><a href={{ route('contact') }} class="hover:underline text-sm">Contacto</a></li>
+                <li><a href={{ route('policies') }} class="hover:underline text-sm">Política de privacidad </a></li>
             </ul>
         </div>
 
