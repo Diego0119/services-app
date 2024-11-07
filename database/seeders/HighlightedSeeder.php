@@ -19,12 +19,12 @@ class HighlightedSeeder extends Seeder
                 'slug' => 'default',
             ],
             [
-                'name' => 'Impulso',
-                'slug' => 'impulso',
+                'name' => 'Remontar',
+                'slug' => 'remontar',
             ],
             [
-                'name' => 'Matriz',
-                'slug' => 'matriz',
+                'name' => 'Galería',
+                'slug' => 'galería',
             ],
         ];
 

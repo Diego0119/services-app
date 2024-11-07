@@ -36,6 +36,12 @@ Route::get('/contact', function () {
 Route::get('/services', function () {
     return view('services.index');
 })->name('services');
+Route::get('/comeback', function () {
+    return view('comeback.index');
+})->name('comeback');
+Route::get('/up-to-gallery', function () {
+    return view('up-to-gallery.index');
+})->name('up-to-gallery');
 Route::get('/search-notice', [NoticeController::class, 'search_notices'])->name('search-notice');
 
 // search route
