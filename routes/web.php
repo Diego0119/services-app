@@ -42,7 +42,7 @@ Route::get('/comeback', function () {
 Route::get('/up-to-gallery', function () {
     return view('up-to-gallery.index');
 })->name('up-to-gallery');
-Route::get('/search-notice', [NoticeController::class, 'search_notices'])->name('search-notice');
+Route::get('/search-notice', [NoticeController::class, 'searchNotices'])->name('search-notice');
 
 // search route
 

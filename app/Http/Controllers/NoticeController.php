@@ -9,6 +9,7 @@ use App\Models\Commune;
 use App\Models\Category;
 use App\Models\Region;
 use App\Models\Attribute;
+use App\Models\HighlightedNotice;
 use DB;
 use App\Models\AttributeValue;
 
@@ -99,7 +100,7 @@ class NoticeController extends Controller
 
     }
 
-    public function search_notices(Request $request)
+    public function searchNotices(Request $request)
     {
         $locationId = $request->input('location_id');
         $query = $request->input('query');
@@ -156,6 +157,19 @@ class NoticeController extends Controller
 
         return redirect()->route('dashboard')
             ->withSuccess(__('Anuncio modificado correctamente'));
+
+    }
+
+    public function upToGalleryNotice($noticeId, Request $request)
+    {
+        $notice = Notice::where('id', $noticeId)->first();
+        $highlighted_notice = new HighlightedNotice;
+        $highlighted_notice->notice_id = $noticeId;
+        $highlighted_notice->start_date = '2024-11-07 14:30:00';
+        $highlighted_notice->end_date = '2024-11-07 14:30:00';
+        $highlighted_notice->amount_paid = 2000;
+        $highlighted_notice->is_active = TRUE;
+        $highlighted_notice->save();
 
     }
 

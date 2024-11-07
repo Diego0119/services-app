@@ -40,4 +40,8 @@ class Notice extends Model
     {
         return $this->belongsTo(Highlighted::class);
     }
+    public function highlightedNotices()
+    {
+        return $this->hasMany(HighlightedNotice::class);
+    }
 }
