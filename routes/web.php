@@ -39,10 +39,14 @@ Route::get('/services', function () {
 Route::get('/comeback', function () {
     return view('comeback.index');
 })->name('comeback');
-Route::get('/up-to-gallery', function () {
-    return view('up-to-gallery.index');
-})->name('up-to-gallery');
+
 Route::get('/search-notice', [NoticeController::class, 'searchNotices'])->name('search-notice');
+
+Route::post('/notice-modify/{id}/up-to-gallery', [NoticeController::class, 'storeModifiedNotice'])->name('up-to-gallery.post');
+Route::get('/notice-modify/{id}/up-to-gallery', function ($id) {
+    return view('up-to-gallery.index', ['notice_id' => $id]);
+})->name('up-to-gallery.get');
+
 
 // search route
 

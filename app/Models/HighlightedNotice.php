@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class HighlightedNotice extends Model
 {
     use HasFactory;
+    protected $table = 'highlighted_notice';
 
     protected $fillable = [
         'highlighted_id',

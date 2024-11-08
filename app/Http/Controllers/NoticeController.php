@@ -152,24 +152,38 @@ class NoticeController extends Controller
     {
         $notice = Notice::where('id', $noticeId)->first();
 
-        $notice->status = $request->input('status');
-        $notice->save();
+        # crear la validacion para que no se pueda subir 2 veces el mismo aviso
+        if ($request->has('submit_gallery')) {
+            $highlighted_notice = new HighlightedNotice;
+            $highlighted_notice->notice_id = $noticeId;
+            $highlighted_notice->highlighted_id = 2;
+            $highlighted_notice->start_date = '2024-11-07 14:30:00';
+            $highlighted_notice->end_date = '2024-11-07 14:30:00';
+            $highlighted_notice->amount_paid = 2000;
+            $highlighted_notice->is_active = TRUE;
+            $highlighted_notice->save();
+            return redirect()->route('dashboard')
+                ->withSuccess(__('Anuncio subido a la galeria exitosamente'));
 
-        return redirect()->route('dashboard')
-            ->withSuccess(__('Anuncio modificado correctamente'));
+        }
+        if ($request->has('submit_boost')) {
+            //pass
+        } else {
+            $notice->status = $request->input('status');
+            $notice->save();
+            return redirect()->route('dashboard')
+                ->withSuccess(__('Anuncio modificado correctamente'));
+
+        }
+
+
 
     }
 
     public function upToGalleryNotice($noticeId, Request $request)
     {
         $notice = Notice::where('id', $noticeId)->first();
-        $highlighted_notice = new HighlightedNotice;
-        $highlighted_notice->notice_id = $noticeId;
-        $highlighted_notice->start_date = '2024-11-07 14:30:00';
-        $highlighted_notice->end_date = '2024-11-07 14:30:00';
-        $highlighted_notice->amount_paid = 2000;
-        $highlighted_notice->is_active = TRUE;
-        $highlighted_notice->save();
+
 
     }
 

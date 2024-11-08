@@ -7,13 +7,10 @@
 
     <title inertia>{{ config('app.name', 'deNexos') }}</title>
 
-    <!-- Styles -->
     @vite('resources/css/app.css')
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-
-    <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" />
@@ -29,22 +26,16 @@
         </div>
     @endif
 
-    {{-- container mx-auto p-4 flex-1 --}}
     <div class="mx-4">
-        <!-- Publicidad -->
         <div class="bg-secondary text-white text-center py-4 rounded-lg mt-16">
             <p class="text-lg font-bold">Espacio para Publicidad</p>
         </div>
 
-        <!-- Barra de búsqueda e inicio de sesión -->
         <x-search />
 
-        <!-- Galería de productos -->
         <x-gallery-layout />
 
-        <!-- Enlaces a categorías -->
         <div class="bg-white p-6 rounded-lg shadow-md my-4">
-            <!-- Enlaces a categorías -->
             <div class="bg-white p-6 rounded-lg shadow-md my-4">
                 <p class="text-primary text-center font-bold text-xl">Enlaces a las Distintas Categorías</p>
             </div>
@@ -116,14 +107,12 @@
 
         </div>
 
-        <!-- Publicidad Emergente -->
         <div class="fixed right-4 bottom-4 bg-secondary text-white p-4 rounded-lg shadow-lg">
-            <p class="font-medium text-center">Publicidad Emergente Temporal</p>
+            <p class="font-medium text-center z-20">Publicidad Emergente Temporal</p>
         </div>
     </div>
 
 </body>
-<!-- Footer -->
 <x-footer />
 
 </html>

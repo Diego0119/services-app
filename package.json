@@ -23,6 +23,7 @@
         "vite": "^5.0"
     },
     "dependencies": {
-        "font-awesome": "^4.7.0"
+        "font-awesome": "^4.7.0",
+        "swiper": "^11.1.14"
     }
 }
