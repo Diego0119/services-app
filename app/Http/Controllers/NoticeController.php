@@ -76,7 +76,6 @@ class NoticeController extends Controller
         }
         return redirect()->route('dashboard')
             ->withSuccess(__('El aviso se encuentra en revisión, seras notificado cuando se haya aprobado.'));
-
     }
 
     public function showNotice($noticeId)
