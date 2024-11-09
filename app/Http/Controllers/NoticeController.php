@@ -12,6 +12,7 @@ use App\Models\Attribute;
 use App\Models\HighlightedNotice;
 use DB;
 use App\Models\AttributeValue;
+use Carbon\Carbon;
 
 class NoticeController extends Controller
 {
@@ -147,36 +148,58 @@ class NoticeController extends Controller
         );
     }
 
+
     public function storeModifiedNotice($noticeId, Request $request)
     {
         $notice = Notice::where('id', $noticeId)->first();
 
-        # crear la validacion para que no se pueda subir 2 veces el mismo aviso
         if ($request->has('submit_gallery')) {
+            $request->validate([
+                'gallery_duration' => 'required|in:1,2,3,4',
+            ]);
+
+            $duration = $request->input('gallery_duration');
+
+            $start_date = Carbon::now();
+
+            $end_date = $start_date->copy();
+
+            switch ($duration) {
+                case 1:
+                    $end_date->addWeek();
+                    break;
+                case 2:
+                    $end_date->addWeeks(2);
+                    break;
+                case 3:
+                    $end_date->addWeeks(3);
+                    break;
+                case 4:
+                    $end_date->addMonth();
+                    break;
+            }
+
             $highlighted_notice = new HighlightedNotice;
             $highlighted_notice->notice_id = $noticeId;
             $highlighted_notice->highlighted_id = 2;
-            $highlighted_notice->start_date = '2024-11-07 14:30:00';
-            $highlighted_notice->end_date = '2024-11-07 14:30:00';
+            $highlighted_notice->start_date = $start_date;
+            $highlighted_notice->end_date = $end_date;
             $highlighted_notice->amount_paid = 2000;
             $highlighted_notice->is_active = TRUE;
             $highlighted_notice->save();
-            return redirect()->route('dashboard')
-                ->withSuccess(__('Anuncio subido a la galeria exitosamente'));
 
+            return redirect()->route('dashboard')
+                ->withSuccess(__('Anuncio subido a la galería exitosamente'));
         }
+
         if ($request->has('submit_boost')) {
-            //pass
+            // Lógica de boost
         } else {
             $notice->status = $request->input('status');
             $notice->save();
             return redirect()->route('dashboard')
                 ->withSuccess(__('Anuncio modificado correctamente'));
-
         }
-
-
-
     }
 
     public function upToGalleryNotice($noticeId, Request $request)

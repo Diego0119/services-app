@@ -13,9 +13,10 @@
                 <div class="mb-4">
                     <label for="gallery_duration" class="block text-gray-700 font-medium">Duración en la galería</label>
                     <select name="gallery_duration" id="gallery_duration"
-                        class="w-full px-4 py-3 border border-gray-300 rounded focus:ring focus:ring-blue-200">
+                        class="w-full px-4 py-3 border border-gray-300 rounded focus:ring focus:ring-blue-200" required>
                         <option value="1">1 semana - $8.00</option>
                         <option value="2">2 semanas - $15.00</option>
+                        <option value="3">3 semanas - $22.00</option>
                         <option value="4">1 mes - $25.00</option>
                     </select>
                 </div>
