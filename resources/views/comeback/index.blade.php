@@ -19,31 +19,21 @@
                         class="w-full px-4 py-3 border border-gray-300 rounded focus:ring focus:ring-blue-200">
                         <option value="1">1 semana - $5.00</option>
                         <option value="2">2 semanas - $9.00</option>
+                        <option value="3">3 semanas - $9.00</option>
                         <option value="4">1 mes - $15.00</option>
-                    </select>
-                </div>
-
-                <!-- Posición en la lista -->
-                <div class="mb-4">
-                    <label for="position" class="block text-gray-700 font-medium">Posición en la lista</label>
-                    <select name="position" id="position"
-                        class="w-full px-4 py-3 border border-gray-300 rounded focus:ring focus:ring-blue-200">
-                        <option value="top">Primera posición - $10.00</option>
-                        <option value="featured">Posición destacada - $7.00</option>
-                        <option value="regular">Posición regular - Gratis</option>
                     </select>
                 </div>
 
                 <!-- Color de fondo del anuncio -->
                 <div class="mb-4">
-                    <label for="highlight_color" class="block text-gray-700 font-medium">Color de fondo del
+                    <label for="highlight_color" class="block text-gray-700 font-medium">Color de la etiqueta del
                         anuncio</label>
                     <select name="highlight_color" id="highlight_color"
                         class="w-full px-4 py-3 border border-gray-300 rounded focus:ring focus:ring-blue-200">
-                        <option value="none">Sin color de fondo - Gratis</option>
-                        <option value="yellow">Fondo amarillo - $2.00</option>
-                        <option value="blue">Fondo azul - $2.00</option>
-                        <option value="green">Fondo verde - $2.00</option>
+                        <option value="none">Etiqueta azul (por defecto) - Gratis</option>
+                        <option value="yellow">Etiqueta verde - $2.00</option>
+                        <option value="blue">Etiqueta morada - $2.00</option>
+                        <option value="green">Etiqueta dorada - $2.00</option>
                     </select>
                 </div>
             </div>

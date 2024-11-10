@@ -20,16 +20,6 @@
                         <option value="4">1 mes - $25.00</option>
                     </select>
                 </div>
-
-                <div class="mb-4">
-                    <label for="gallery_position" class="block text-gray-700 font-medium">Posición en la galería</label>
-                    <select name="gallery_position" id="gallery_position"
-                        class="w-full px-4 py-3 border border-gray-300 rounded focus:ring focus:ring-blue-200">
-                        <option value="top">Primera posición - $12.00</option>
-                        <option value="featured">Posición destacada - $10.00</option>
-                        <option value="regular">Posición regular - Gratis</option>
-                    </select>
-                </div>
             </div>
 
             <div class="bg-white p-6 rounded shadow mt-6">
