@@ -79,7 +79,7 @@ class NoticeController extends Controller
             ->withSuccess(__('El aviso se encuentra en revisión, seras notificado cuando se haya aprobado.'));
     }
 
-    public function showNotic($noticeId)
+    public function showNotice($noticeId)
     {
         $notice = Notice::where('id', $noticeId)->first();
         $user = User::where('id', $notice->user_id)->first();
