@@ -57,14 +57,26 @@
                 </ul>
 
                 <div class="flex space-x-4 mt-6">
-                    <a href="{{ route('comeback') }}"
-                        class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 focus:ring focus:ring-indigo-300">
-                        Remontar
-                    </a>
-                    <a href="{{ route('up-to-gallery.get', $notice->id) }}"
-                        class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 focus:ring focus:ring-indigo-300">
-                        Subir a galería
-                    </a>
+                    @if ($notice->highlighted_id == 1)
+                        <a href="{{ route('comeback') }}"
+                            class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 focus:ring focus:ring-indigo-300">
+                            Remontar
+                        </a>
+
+                        <a href="{{ route('up-to-gallery.get', $notice->id) }}"
+                            class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 focus:ring focus:ring-indigo-300">
+                            Subir a galería
+                        </a>
+                    @else
+                        <a class="px-4 py-2 bg-gray-400 text-white rounded focus:ring">
+                            Remontar
+                        </a>
+
+                        <a class="px-4 py-2 bg-gray-400 text-white rounded focus:ring">
+                            Subir a galería
+                        </a>
+                        <span class="flex items-center text-gray-600">Tu aviso ya cuenta con un servicio de pago.</span>
+                    @endif
                 </div>
             </div>
 
