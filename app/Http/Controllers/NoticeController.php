@@ -186,6 +186,8 @@ class NoticeController extends Controller
             $highlighted_notice->end_date = $end_date;
             $highlighted_notice->amount_paid = 2000;
             $highlighted_notice->is_active = TRUE;
+            $notice->highlighted_id = 2;
+            $notice->save();
             $highlighted_notice->save();
 
             return redirect()->route('dashboard')

@@ -15,14 +15,13 @@
                     <div
                         class="flex flex-col bg-gray-100 p-6 rounded-lg shadow-md text-center space-y-4 hover:scale-105 transition-all cursor-pointer">
                         <!-- Etiqueta colorida, con clase dinámica -->
-
-                        <div
-                            class="top-2 left-2 px-2 py-1 text-white font-bold rounded-md
-                            @if ($notice->highlight_color == 'yellow') bg-yellow-400 <span>Promocionado</span> <i class="fas fa-medal"></i>
-                            @elseif ($notice->highlight_color == 'indigo')  bg-purple-500 <span>Promocionado</span> <i class="fas fa-diamond"></i>
-                            @elseif ($notice->highlight_color == 'green')  bg-green-500 <span>Promocionado</span> <i class="fas fa-trophy"></i>
-                            @elseif ($notice->highlight_color == 'blue')  bg-blue-500  <span>Promocionado</span> <i class="fas fa-check"></i> @endif">
-                        </div>
+                        @if ($notice->highlighted_id == 2)
+                            <div
+                                class="top-2 left-2 px-2 py-1 text-white font-bold rounded-md
+                             bg-yellow-400">
+                                <span>Promocionado <i class="fa-solid fa-medal"></i></span>
+                            </div>
+                        @endif
 
                         <img src="https://via.placeholder.com/300" alt="Producto"
                             class="w-full h-44 object-cover rounded-md">
