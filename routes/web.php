@@ -11,6 +11,8 @@ use App\Http\Controllers\DetailsController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\MyNoticesController;
 use App\Http\Controllers\UploadNoticeController;
+use App\Http\Middleware\CheckIfNoticeIsHighlighted;
+
 
 
 
@@ -45,7 +47,7 @@ Route::get('/search-notice', [NoticeController::class, 'searchNotices'])->name('
 Route::post('/notice-modify/{id}/up-to-gallery', [NoticeController::class, 'storeModifiedNotice'])->name('up-to-gallery.post');
 Route::get('/notice-modify/{id}/up-to-gallery', function ($id) {
     return view('up-to-gallery.index', ['notice_id' => $id]);
-})->name('up-to-gallery.get');
+})->middleware(CheckIfNoticeIsHighlighted::class)->name('up-to-gallery.get');
 
 
 // search route
