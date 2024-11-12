@@ -24,7 +24,7 @@
                     </select>
                 </div>
 
-                <!-- Color de fondo del anuncio -->
+                {{-- <!-- Color de fondo del anuncio -->
                 <div class="mb-4">
                     <label for="highlight_color" class="block text-gray-700 font-medium">Color de la etiqueta del
                         anuncio</label>
@@ -35,7 +35,7 @@
                         <option value="blue">Etiqueta morada - $2.00</option>
                         <option value="green">Etiqueta dorada - $2.00</option>
                     </select>
-                </div>
+                </div> --}}
             </div>
 
             <!-- Resumen de la compra -->

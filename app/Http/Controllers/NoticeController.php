@@ -89,7 +89,7 @@ class NoticeController extends Controller
             ->where('attribute_values.notice_id', $noticeId)
             ->select('attributes.name as name', 'attribute_values.value as value', 'attributes.type as type')
             ->get();
-
+        $notice->increment('views');
 
         return view('notice-details.index', [
             'notice' => $notice,

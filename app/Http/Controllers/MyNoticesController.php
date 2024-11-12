@@ -17,7 +17,7 @@ class MyNoticesController extends Controller
     {
         $user = auth()->user();
 
-        $notices = Notice::select('id', 'title', 'description', 'price', 'status', 'commune_id')->paginate(20);
+        $notices = Notice::select('id', 'title', 'description', 'price', 'status', 'commune_id', 'views')->paginate(20);
         return view('my-notices.index', [
             'notices' => $notices,
             'user' => $user

@@ -9,6 +9,7 @@
                         <th class="text-left px-4 py-2">Título</th>
                         <th class="text-left px-4 py-2">Precio</th>
                         <th class="text-left px-4 py-2">Contacto</th>
+                        <th class="text-left px-4 py-2">Vistas</th>
                         <th class="text-left px-4 py-2">Acciones</th>
                     </tr>
                 </thead>
@@ -16,8 +17,9 @@
                     @foreach ($notices as $notice)
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-4 py-2">{{ $notice->title }}</td>
-                            <td class="px-4 py-2">{{ $notice->price }}</td>
+                            <td class="px-4 py-2">{{ $notice->price }} CLP</td>
                             <td class="px-4 py-2">{{ $user->name }} - {{ $user->email }}</td>
+                            <td class="px-4 py-2">{{ $notice->views > 0 ? $notice->views : 0 }}</td>
                             <td class="px-4 py-2">
                                 <a href={{ route('notice.show', $notice->id) }}
                                     class="text-blue-600 hover:underline">Ver</a>
