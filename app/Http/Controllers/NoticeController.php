@@ -92,9 +92,11 @@ class NoticeController extends Controller
         $notice->increment('views');
         $related_notices = Notice::where('category_id', $notice->category_id)
             ->where('id', '!=', $notice->id)
+            ->whereRaw('LOWER(title) LIKE ?', ['%' . strtolower($notice->title) . '%'])
             ->take(10)
             ->get();
 
+        // dd($related_notices);
         return view('notice-details.index', [
             'notice' => $notice,
             'user' => $user,

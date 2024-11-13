@@ -20,9 +20,10 @@
                         <p class="text-gray-700 mb-2">{{ $related_notice->description }}</p>
                         <p class="text-green-500 font-bold mb-2">{{ $related_notice->price }}</p>
                         <a>
-                            <button class="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-800">Ver
-                                más</button>
-                        </a>
+                            <a href={{ route('notice.show', $related_notice->id) }}>
+                                <button class="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-800">Ver
+                                    más</button>
+                            </a>
                     </div>
                 @endforeach
             @else
