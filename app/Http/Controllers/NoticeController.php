@@ -90,12 +90,17 @@ class NoticeController extends Controller
             ->select('attributes.name as name', 'attribute_values.value as value', 'attributes.type as type')
             ->get();
         $notice->increment('views');
+        $related_notices = Notice::where('category_id', $notice->category_id)
+            ->where('id', '!=', $notice->id)
+            ->take(10)
+            ->get();
 
         return view('notice-details.index', [
             'notice' => $notice,
             'user' => $user,
             'commune' => $commune,
-            'attributes' => $attributes
+            'attributes' => $attributes,
+            'related_notices' => $related_notices,
         ]);
 
     }

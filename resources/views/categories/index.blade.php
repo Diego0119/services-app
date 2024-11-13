@@ -35,8 +35,9 @@
                 @endif
             @endforeach
         @else
-            <div class="flex flex-col items-center justify-center w-full p-6 text-center">
-                <p class="text-gray-700">No hay posts</p>
+            <div
+                class="flex justify-center items-center text-gray-500 font-semibold text-xl p-4 border border-dashed border-gray-300 rounded-lg bg-gray-50">
+                No hay posts
             </div>
         @endif
     </div>

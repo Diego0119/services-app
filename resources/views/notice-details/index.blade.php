@@ -60,5 +60,5 @@
         @endif
 
     </div>
-    <x-gallery-layout />
+    <x-related-notices-layout :related_notices="$related_notices" />
 </x-app-layout>
