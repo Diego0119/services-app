@@ -28,14 +28,25 @@
             <x-button class="bg-primary">Subir aviso</x-button>
         </a>
         <ul class="mt-6">
-            <li><a href="{{ route('dashboard') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Inicio</a></li>
-            <li><a href="{{ route('my-notices.index') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mis
-                    Avisos</a>
+            <li><a href="{{ route('dashboard') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Inicio</a>
             </li>
-            @if (Auth::user()->isAdmin())
-                <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Usuarios</a></li>
+            @if (Auth::user()->isClient())
+                <li><a href="{{ route('my-notices.index') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mis
+                        Avisos</a>
+                </li>
+                <li><a href="{{ route('my-notices.index') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mis
+                        Avisos Promocionados</a>
+                </li>
+            @elseif (Auth::user()->isAdmin())
+                <li><a href="{{ route('get-users') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Usuarios</a>
+                </li>
+                <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Codigos de descuento</a></li>
+                <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">
+                        Avisos publicados</a>
+                </li>
             @endif
-            <li><a href="{{ route('account.index') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mi Cuenta</a>
+            <li><a href="{{ route('account.index') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mi
+                    Cuenta</a>
             </li>
             <form action="{{ route('logout') }}" method="POST" style="display: inline;" class="ml-2">
                 @csrf

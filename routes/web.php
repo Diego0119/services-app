@@ -12,6 +12,7 @@ use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\MyNoticesController;
 use App\Http\Controllers\UploadNoticeController;
 use App\Http\Middleware\CheckIfNoticeIsHighlighted;
+use App\Http\Middleware\CheckIfUserIsAdmin;
 
 
 
@@ -48,6 +49,8 @@ Route::post('/notice-modify/{id}/up-to-gallery', [NoticeController::class, 'stor
 Route::get('/notice-modify/{id}/up-to-gallery', function ($id) {
     return view('up-to-gallery.index', ['notice_id' => $id]);
 })->middleware(CheckIfNoticeIsHighlighted::class)->name('up-to-gallery.get');
+
+Route::get('/users', [DashboardController::class, 'showUsers'])->middleware(CheckIfUserIsAdmin::class)->name('get-users');
 
 
 // search route
