@@ -11,6 +11,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -25,7 +26,7 @@
             </a>
         </div>
         <a class="flex justify-center mt-4" href="{{ route('upload-notice.index') }}">
-            <x-button class="bg-primary">Subir aviso</x-button>
+            <x-button class="bg-primary flex items-center">Subir aviso<i class="fa-solid fa-upload"></i></x-button>
         </a>
         <ul class="mt-6">
             <li><a href="{{ route('dashboard') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Inicio</a>
