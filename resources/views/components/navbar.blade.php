@@ -1,6 +1,6 @@
 <nav class="bg-primary p-4 shadow-md fixed top-0 w-full z-50">
     <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-secondary"><a href="{{ route('home') }}">deNexos</a></h1>
+        <h1 class="text-2xl font-bold text-secondary"><a href="{{ route('home') }}">ServicesApp</a></h1>
         <div class="space-x-4">
 
             @if (Auth::check())

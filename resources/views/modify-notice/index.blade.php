@@ -41,45 +41,6 @@
                     </select>
                 </div>
             </div>
-
-            <div class="bg-white p-6 rounded shadow mt-6">
-                <h3 class="text-xl font-semibold text-gray-700 mb-4">Opciones adicionales</h3>
-                <ul class="space-y-3">
-                    <li class="flex items-start">
-                        <span class="text-blue-600 font-semibold mr-2">Remontar (de pago):</span>
-                        <span class="text-gray-600">Coloca el anuncio en una posición destacada en la matriz.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-600 font-semibold mr-2">Subir a galería (de pago):</span>
-                        <span class="text-gray-600">Añade el anuncio a una galería especial para mayor
-                            visibilidad.</span>
-                    </li>
-                </ul>
-
-                <div class="flex space-x-4 mt-6">
-                    @if ($notice->highlighted_id == 1)
-                        <a href="{{ route('comeback') }}"
-                            class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 focus:ring focus:ring-indigo-300">
-                            Remontar
-                        </a>
-
-                        <a href="{{ route('up-to-gallery.get', $notice->id) }}"
-                            class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 focus:ring focus:ring-indigo-300">
-                            Subir a galería
-                        </a>
-                    @else
-                        <a class="px-4 py-2 bg-gray-400 text-white rounded focus:ring">
-                            Remontar
-                        </a>
-
-                        <a class="px-4 py-2 bg-gray-400 text-white rounded focus:ring">
-                            Subir a galería
-                        </a>
-                        <span class="flex items-center text-gray-600">Tu aviso ya cuenta con un servicio de pago.</span>
-                    @endif
-                </div>
-            </div>
-
             <div class="flex justify-end space-x-4 mt-8">
                 <button type="submit"
                     class="px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600 focus:ring focus:ring-green-200"

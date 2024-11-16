@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title inertia>{{ config('app.name', 'deNexos') }}</title>
+    <title inertia>{{ config('app.name', 'servicesApp') }}</title>
 
     @vite('resources/css/app.css')
 
@@ -27,10 +27,6 @@
     @endif
 
     <div class="mx-4">
-        <div class="bg-secondary text-white text-center py-4 rounded-lg mt-16">
-            <p class="text-lg font-bold">Espacio para Publicidad</p>
-        </div>
-
         <x-search />
 
         <x-gallery-layout />
@@ -105,10 +101,6 @@
                 @endforeach
             </div>
 
-        </div>
-
-        <div class="fixed right-4 bottom-4 bg-secondary text-white p-4 rounded-lg shadow-lg">
-            <p class="font-medium text-center z-20">Publicidad Emergente Temporal</p>
         </div>
     </div>
 

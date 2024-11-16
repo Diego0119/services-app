@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title inertia>{{ config('app.name', 'deNexos') }}</title>
+    <title inertia>{{ config('app.name', 'servicesApp') }}</title>
 
     <!-- Styles -->
     @vite('resources/css/app.css')
@@ -24,19 +24,12 @@
 <body class="font-sans antialiased h-screen flex flex-col bg-lightGray">
     <x-navbar />
     <div class="mx-4">
-        <!-- Publicidad -->
-        <div class="bg-secondary text-white text-center py-4 rounded-lg mt-16">
-            <p class="text-lg font-bold">Espacio para Publicidad</p>
-        </div>
 
         <x-search />
 
         {{ $slot }}
 
-        <!-- Publicidad Emergente -->
-        <div class="fixed right-4 bottom-4 bg-secondary text-white p-4 rounded-lg shadow-lg">
-            <p class="font-medium text-center">Publicidad Emergente Temporal</p>
-        </div>
+
     </div>
 </body>
 <!-- Footer -->

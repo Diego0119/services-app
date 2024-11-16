@@ -2,9 +2,9 @@
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Sección 1: Información de la empresa -->
         <div>
-            <h3 class="text-lg font-semibold mb-4">Sobre deNexos</h3>
-            <p class="text-sm">deNexos es un marketplace donde puedes encontrar y ofrecer productos y servicios de
-                calidad. Nuestra misión es conectar a compradores y vendedores de manera sencilla y segura.</p>
+            <h3 class="text-lg font-semibold mb-4">Sobre servicesApp</h3>
+            <p class="text-sm">ServicesApp es una plataforma de servicios en donde puedes monetizar tus habilidades o
+                vender productos.</p>
         </div>
 
         <!-- Sección 2: Enlaces rápidos -->
@@ -12,8 +12,6 @@
             <h3 class="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
             <ul>
                 <li><a href={{ route('home') }} class="hover:underline text-sm">Inicio</a></li>
-                <li><a href={{ route('policies') }} class="hover:underline text-sm">Política de privacidad </a></li>
-                <li><a href={{ route('services') }} class="hover:underline text-sm">Servicios </a></li>
             </ul>
         </div>
 
@@ -50,7 +48,7 @@
 
     <!-- Footer Inferior -->
     <div class="border-t border-gray-700 mt-8 pt-4 text-center">
-        <p class="text-sm">© 2024 deNexos.cl - Todos los derechos reservados | Diseñado y desarrollado por Diego Alonso
+        <p class="text-sm">© 2024 servicesApp - Todos los derechos reservados | Diseñado y desarrollado por Diego Alonso
             Sanhueza Aguilar</p>
     </div>
 </footer>

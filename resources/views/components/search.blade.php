@@ -3,7 +3,7 @@
  <body>
      <form action={{ route('search-notice') }} METHOD="GET">
          @csrf
-         <div class="bg-white flex sm:space-x-4 py-4 my-4 rounded-lg flex-col sm:flex-row shadow-md">
+         <div class="bg-white flex sm:space-x-4 py-4 my-4 rounded-lg flex-col sm:flex-row shadow-md pt-14">
              <!-- Ubicación / Buscador Rápido -->
              <div class="flex-1 sm:ml-4">
                  <input type="text" name="query" placeholder="¿Qué estás buscando?" class="rounded w-full p-2" />

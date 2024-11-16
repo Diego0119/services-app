@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'deNexos') }}</title>
+    <title>{{ config('app.name', 'servicesApp') }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -22,7 +22,7 @@
         id="sidebar">
         <div class="flex items-center justify-center border-b border-gray-600">
             <a href="{{ route('home') }}">
-                <img src="{{ asset('images/logo_dashboard.png') }}" class="w-52 p-2" alt="Logo Dashboard">
+                <span class="text-2xl py-4">servicesApp</span>
             </a>
         </div>
         <a class="flex justify-center mt-4" href="{{ route('upload-notice.index') }}">
@@ -35,13 +35,9 @@
                 <li><a href="{{ route('my-notices.index') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mis
                         Avisos</a>
                 </li>
-                <li><a href="{{ route('my-notices.index') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Mis
-                        Avisos Promocionados</a>
-                </li>
             @elseif (Auth::user()->isAdmin())
                 <li><a href="{{ route('get-users') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Usuarios</a>
                 </li>
-                <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">Codigos de descuento</a></li>
                 <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">
                         Avisos publicados</a>
                 </li>
