@@ -11,17 +11,15 @@ export default {
     ],
 
     theme: {
-        extend: {  // Cambia aquí a 'extend' para añadir colores sin reemplazar
+        extend: {
             colors: {
-                primary: '#004678',  // Azul oscuro
-                secondary: '#FEAF00', // Amarillo cálido
-                lightGray: '#F4F4F4', // Gris claro
-                darkGray: '#333333',  // Gris oscuro
-                success: '#00A676',   // Verde suave
-                error: '#D9534F',     // Rojo suave
-            },
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                primary: '#8B5CF6',  // Púrpura vibrante
+                secondary: '#34D399', // Verde menta
+                lightGray: '#F5F5F5', // Blanco humo
+                darkGray: '#1F2937',  // Gris oscuro carbón
+                success: '#16A34A',   // Verde bosque
+                error: '#DC2626',     // Rojo granate
+                accent: '#F97316',    // Naranja intenso
             },
         },
     },
