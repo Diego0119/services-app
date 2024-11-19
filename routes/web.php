@@ -22,6 +22,7 @@ Route::get('/', [WelcomeController::class, 'index'])->name('home');
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/details', [DetailsController::class, 'index'])->name('details.index');
 Route::get('/account', [AccountController::class, 'index'])->name('account.index');
+Route::put('/account', [AccountController::class, 'modifyUserInformation'])->name('account.post');
 Route::get('/upload-notice', [NoticeController::class, 'uploadNotice'])->name('upload-notice.index');
 Route::post('/upload-notice', [NoticeController::class, 'store'])->name('upload-notice.store');
 Route::get('/my-notices', [MyNoticesController::class, 'index'])->name('my-notices.index');
@@ -48,9 +49,7 @@ Route::get('/users', [DashboardController::class, 'showUsers'])->middleware(Chec
 
 Route::get("search", [NoticeController::class, 'search'])->name('search');
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

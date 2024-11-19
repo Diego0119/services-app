@@ -23,7 +23,7 @@
                 @endif
                 @if (session('warning'))
                     <div class="bg-yellow-300 border border-yellow-600 text-white- px-4 py-3 rounded relative mb-4">
-                        {{ session('success') }}
+                        {{ session('warning') }}
                     </div>
                 @endif
                 @if (session('error'))
@@ -35,7 +35,7 @@
 
                 <div class="bg-white shadow-md rounded-lg p-4 mb-6">
                     <h3 class="text-xl font-semibold text-gray-800">Estadísticas</h3>
-                    <p class="mt-2">Total de anuncios: <span class="font-bold">12</span></p>
+                    <p class="mt-2">Total de anuncios: <span class="font-bold">{{ $total_anuncios }}</span></p>
                     <p>Vistas totales: <span class="font-bold">$5,300</span></p>
                 </div>
             </main>
