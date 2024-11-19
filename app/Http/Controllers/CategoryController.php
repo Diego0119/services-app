@@ -23,7 +23,8 @@ class CategoryController extends Controller
     {
 
         $category = Category::select('id', 'name')->where('id', $categoryId)->first();
-        $notices = Notice::where('category_id', $categoryId)->get();
+        $notices = Notice::where('category_id', $categoryId)->with('commune')->get();
+
         return view('categories.index', data: [
             'category' => $category,
             'notices' => $notices

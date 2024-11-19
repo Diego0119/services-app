@@ -33,9 +33,6 @@ Route::post('/notice-modify/{id}', [NoticeController::class, 'storeModifiedNotic
 Route::get('/contact', function () {
     return view('contact.index');
 })->name('contact');
-Route::get('/comeback', function () {
-    return view('comeback.index');
-})->name('comeback');
 
 Route::get('/search-notice', [NoticeController::class, 'searchNotices'])->name('search-notice');
 

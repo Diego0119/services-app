@@ -26,7 +26,12 @@
                         <img src="https://via.placeholder.com/300" alt="Producto"
                             class="w-full h-44 object-cover rounded-md">
                         <h3 class="text-lg font-bold">{{ $notice->title }}</h3>
-                        <p class="text-gray-700"></p>
+                        <p class="text-gray-700">Descripción: {{ \Str::limit($notice->description, 100) }}</p>
+                        <p class="text-gray-700"> Fecha de publicación:
+                            {{ \Carbon\Carbon::parse($notice->created_at)->format('Y-m-d') }} <i
+                                class="fa-regular fa-calendar text-primary"></i></p>
+                        <p class="text-gray-700">{{ $notice->commune->name }} <i
+                                class="fa-solid fa-map-pin text-primary"></i></p>
                         <p class="text-green-500 font-bold">{{ $notice->price }} CLP</p>
                         <a href="{{ route('notice.show', $notice->id) }}"
                             class="bg-secondary text-white px-4 py-2 rounded hover:bg-primary inline-block w-1/2 mx-auto">Ver

@@ -44,4 +44,9 @@ class Notice extends Model
     {
         return $this->hasMany(HighlightedNotice::class);
     }
+
+    public function commune()
+    {
+        return $this->belongsTo(Commune::class, 'commune_id');
+    }
 }
