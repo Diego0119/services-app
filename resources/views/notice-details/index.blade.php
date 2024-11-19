@@ -17,8 +17,8 @@
         <div class="flex flex-row space-x-6">
             <!-- Imagen del producto o servicio -->
             <div class="w-1/3">
-                <img src="https://via.placeholder.com/400x300" alt="Imagen del producto o servicio"
-                    class="w-full h-auto rounded-lg">
+                <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1000w,f_auto,q_auto:best/newscms/2019_24/1448814/how-size-doesnt-make-you-happier-today-main-190614.jpg"
+                    alt="Imagen del producto o servicio" class="w-full h-auto rounded-lg">
             </div>
 
             <!-- Descripción del artículo -->

@@ -22,9 +22,8 @@
                                 <span>Promocionado <i class="fa-solid fa-medal"></i></span>
                             </div>
                         @endif
-
-                        <img src="https://via.placeholder.com/300" alt="Producto"
-                            class="w-full h-44 object-cover rounded-md">
+                        <img src="{{ $notice->image_path ? asset($notice->image_path) : 'https://media.istockphoto.com/id/1255274133/es/foto/lujosa-villa-junto-a-la-playa-con-piscina-y-palmeras-en-la-escena-de-la-puesta-de-sol-de-verano.jpg?s=2048x2048&w=is&k=20&c=TuyJBhA3EU9DyEl-CIKoV2f5FdeKtWR8R-WeKz0378U=' }}"
+                            alt="Producto" class="w-full h-44 object-cover rounded-md">
                         <h3 class="text-lg font-bold">{{ $notice->title }}</h3>
                         <p class="text-gray-700">Descripción: {{ \Str::limit($notice->description, 100) }}</p>
                         <p class="text-gray-700"> Fecha de publicación:

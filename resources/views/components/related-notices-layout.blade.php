@@ -14,8 +14,8 @@
                     <div class="swiper-slide flex-shrink-0 w-64 bg-gray-100 p-4 rounded-lg shadow-md text-center hover:scale-105 transition-transform transform-gpu"
                         onmouseover="this.style.transform='scale(1.005) translateY(-10px)'; swiper.autoplay.stop();"
                         onmouseout="this.style.transform='scale(1) translateY(0)'; swiper.autoplay.start();">
-                        <img src="https://via.placeholder.com/300" alt="Producto 1"
-                            class="w-full h-48 object-cover rounded-md mb-4">
+                        <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1000w,f_auto,q_auto:best/newscms/2019_24/1448814/how-size-doesnt-make-you-happier-today-main-190614.jpg"
+                            alt="Producto 1" class="w-full h-48 object-cover rounded-md mb-4">
                         <h3 class="text-lg font-bold mb-2">{{ $related_notice->title }}</h3>
                         <p class="text-gray-700 mb-2">{{ $related_notice->description }}</p>
                         <p class="text-green-500 font-bold mb-2">{{ $related_notice->price }}</p>

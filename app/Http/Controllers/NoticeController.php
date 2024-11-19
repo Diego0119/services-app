@@ -63,6 +63,11 @@ class NoticeController extends Controller
         $notice->commune_id = $request->input('commune');
         $notice->status = 'EN_REVISION';
 
+        if ($request->hasFile('imagen')) {
+            $path = $request->file('imagen');
+            str_replace('public/', 'storage/', $path);
+        }
+
         $notice->save();
         $attributes = $request->input('attributes');
         if (!empty($attributes)) {
@@ -155,7 +160,6 @@ class NoticeController extends Controller
         );
     }
 
-
     public function storeModifiedNotice($noticeId, Request $request)
     {
         $notice = Notice::where('id', $noticeId)->first();
@@ -166,12 +170,4 @@ class NoticeController extends Controller
             ->withSuccess(__('Anuncio modificado correctamente'));
 
     }
-
-    public function upToGalleryNotice($noticeId, Request $request)
-    {
-        $notice = Notice::where('id', $noticeId)->first();
-
-
-    }
-
 }
