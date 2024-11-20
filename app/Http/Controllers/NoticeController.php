@@ -170,4 +170,15 @@ class NoticeController extends Controller
             ->withSuccess(__('Anuncio modificado correctamente'));
 
     }
+
+    public function getAllNotices()
+    {
+        $notices = Notice::paginate(20);
+        $user = User::get();
+
+        return view('published-notices.index', [
+            'notices' => $notices,
+            'user' => $user
+        ]);
+    }
 }

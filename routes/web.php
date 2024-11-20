@@ -26,6 +26,7 @@ Route::put('/account', [AccountController::class, 'modifyUserInformation'])->nam
 Route::get('/upload-notice', [NoticeController::class, 'uploadNotice'])->name('upload-notice.index');
 Route::post('/upload-notice', [NoticeController::class, 'store'])->name('upload-notice.store');
 Route::get('/my-notices', [MyNoticesController::class, 'index'])->name('my-notices.index');
+Route::get('/notices', [NoticeController::class, 'getAllNotices'])->name('get-all-notices');
 Route::get('get-communes/{region_id}', [CommunesController::class, 'getCommunes']);
 Route::get('/category/{id}', [CategoryController::class, 'showCategory'])->name('category.show');
 Route::get('/notice/{id}', [NoticeController::class, 'showNotice'])->name('notice.show');

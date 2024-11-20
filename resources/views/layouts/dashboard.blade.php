@@ -38,7 +38,7 @@
             @elseif (Auth::user()->isAdmin())
                 <li><a href="{{ route('get-users') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">Usuarios</a>
                 </li>
-                <li><a href="#" class="block font-bold px-4 py-2 hover:bg-gray-600">
+                <li><a href="{{ route('get-all-notices') }}" class="block font-bold px-4 py-2 hover:bg-gray-600">
                         Avisos publicados</a>
                 </li>
             @endif
