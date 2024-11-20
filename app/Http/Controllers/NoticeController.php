@@ -173,6 +173,8 @@ class NoticeController extends Controller
 
     public function getAllNotices()
     {
+
+
         $notices = Notice::paginate(20);
         $user = User::get();
 
