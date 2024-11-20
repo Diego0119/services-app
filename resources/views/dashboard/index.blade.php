@@ -35,8 +35,8 @@
 
                 <div class="bg-white shadow-md rounded-lg p-4 mb-6">
                     <h3 class="text-xl font-semibold text-gray-800">Estadísticas</h3>
-                    <p class="mt-2">Total de anuncios: <span class="font-bold">{{ $total_anuncios }}</span></p>
-                    <p>Vistas totales: <span class="font-bold">$5,300</span></p>
+                    <p class="mt-2">Total de anuncios: <span class="font-bold">{{ $total_notices }}</span></p>
+                    <p>Vistas totales: <span class="font-bold">{{ $total_views }}</span></p>
                 </div>
             </main>
         </div>
