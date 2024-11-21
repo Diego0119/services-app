@@ -15,7 +15,6 @@ class AccountController extends Controller
 
     public function modifyUserInformation(Request $request)
     {
-        // Validación de los campos
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'password' => 'nullable|confirmed|min:8',
