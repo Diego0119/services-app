@@ -14,14 +14,6 @@
                 @if ($notice->status == 'ACTIVO')
                     <div
                         class="flex flex-col bg-gray-100 p-6 rounded-lg shadow-md text-center space-y-4 hover:scale-105 transition-all cursor-pointer">
-                        <!-- Etiqueta colorida, con clase dinámica -->
-                        @if ($notice->highlighted_id == 2)
-                            <div
-                                class="top-2 left-2 px-2 py-1 text-white font-bold rounded-md
-                             bg-yellow-400">
-                                <span>Promocionado <i class="fa-solid fa-medal"></i></span>
-                            </div>
-                        @endif
                         <img src="{{ $notice->image_path ? asset($notice->image_path) : 'https://media.istockphoto.com/id/1255274133/es/foto/lujosa-villa-junto-a-la-playa-con-piscina-y-palmeras-en-la-escena-de-la-puesta-de-sol-de-verano.jpg?s=2048x2048&w=is&k=20&c=TuyJBhA3EU9DyEl-CIKoV2f5FdeKtWR8R-WeKz0378U=' }}"
                             alt="Producto" class="w-full h-44 object-cover rounded-md">
                         <h3 class="text-lg font-bold">{{ $notice->title }}</h3>
